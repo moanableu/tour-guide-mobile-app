@@ -17,7 +17,7 @@ public class SeightseeingFragment extends Fragment {
     private ArrayList<Location> mLocation;
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter; // limits displayed data  for improved performance
+    private LocationAdapter mAdapter; // limits displayed data  for improved performance
     private RecyclerView.LayoutManager mLayoutManager; //aligns items
 
     public SeightseeingFragment(){
@@ -29,18 +29,32 @@ public class SeightseeingFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.rb_cardview,container,false);
 
+
         final ArrayList<Location> locations = new ArrayList <Location>();
         locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing,"Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing,"Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
 
         // add onItemClickListener
-        mRecyclerView = rootView.findViewById(R.id.recyclerView);
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        mAdapter = new LocationAdapter(mLocation);
 
+        mRecyclerView = rootView.findViewById(R.id.recyclerView);
+        //RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        //mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mAdapter = new LocationAdapter(locations);
+
+        // mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+        mAdapter.setOnItemClickListener(new LocationAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                mLocation.get(position);
+            }
+        });
+
         return rootView;
-} }
+
+    }
+}
