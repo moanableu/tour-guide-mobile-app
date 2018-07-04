@@ -28,6 +28,9 @@ public class SeightseeingFragment extends Fragment {
         locations.add(new Location(R.drawable.seightseeing,"Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing,"Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
 
+        //instantiate adapter to listview
+        // add onItemClickListener
+
         return rootView;
     }
 }

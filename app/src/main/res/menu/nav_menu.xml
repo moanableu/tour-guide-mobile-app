@@ -12,10 +12,7 @@
             android:id="@+id/nav_seightseeing1"
             android:icon="@drawable/seightseeing"
             android:title="@string/seightseeing" />
-    </group>
 
-    <!-- placeholder-->
-    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_seightseeing2"
             android:icon="@drawable/seightseeing"
@@ -25,5 +22,22 @@
             android:icon="@drawable/seightseeing"
             android:title="@string/seightseeing" />
     </group>
+
+    <item android:title="Itinerary">
+        <menu>
+            <item
+                android:id="@+id/calendar"
+                android:icon="@drawable/seightseeing"
+                android:title="Save to calendar"/>
+            <item
+                android:id="@+id/maps"
+                android:icon="@drawable/seightseeing"
+                android:title="Open directions"/>
+            <item
+                android:id="@+id/share"
+                android:icon="@drawable/seightseeing"
+                android:title="Share"/>
+        </menu>
+    </item>
 
 </menu>
