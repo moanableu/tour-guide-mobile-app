@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Reisen Berlin</string>
+    <string name="seightseeing">Seightseeing</string>
+
+    <string name="navbaropen">Open Navigation Bar</string>
+    <string name="navbarclose">Close Navigation Bar</string>
+</resources>
