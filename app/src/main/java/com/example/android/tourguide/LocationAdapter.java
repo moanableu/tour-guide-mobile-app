@@ -12,12 +12,20 @@ import java.util.ArrayList;
 
 public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.LocationViewHolder> {
     private ArrayList<Location> mLocation;
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
+    }
 
     public static class LocationViewHolder extends RecyclerView.ViewHolder{
         public ImageView mImage;
-        public TextView mName, mDescription;
+        public TextView mName, mDescription, mWebsite, mSchedule, mAddress, mEntryFee;
 
-        public LocationViewHolder(View itemView) {
+        public LocationViewHolder(final View itemView, final OnItemClickListener listener) {
             super(itemView);
 
            /* views pending implementations
@@ -29,6 +37,18 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.Locati
             mImage = itemView.findViewById(R.id.image);
             mName = itemView.findViewById(R.id.name);
             mDescription = itemView.findViewById(R.id.description);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null){
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION);{
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -41,7 +61,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.Locati
     @Override
     public LocationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rb_cardview,parent,false);
-        LocationViewHolder lvh = new LocationViewHolder(view);
+        LocationViewHolder lvh = new LocationViewHolder(view, mListener);
         return lvh;
     }
 

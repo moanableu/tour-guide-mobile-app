@@ -7,12 +7,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-
-import java.util.ArrayList;
+import android.widget.Toast;
 
 /**
  * resources: Coding in Flow Navigation Drawer with Fragments
@@ -20,11 +17,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
-    private ArrayList<Location> mLocation;
-
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter; // limits displayed data  for improved performance
-    private RecyclerView.LayoutManager mLayoutManager; //aligns items
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +51,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_seightseeing2:
                 getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new SeightseeingFragment()).commit();
                 break;
+            case R.id.calendar:
+                Toast.makeText(this, "Save to calendar", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.maps:
+                Toast.makeText(this, "Get directions", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.share:
+                Toast.makeText(this, "Save to calendar", Toast.LENGTH_SHORT).show();
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);
@@ -71,14 +72,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();}
-    }
-
-    public void buildReclycerView(){
-        mRecyclerView = findViewById(R.id.recyclerView);
-        //mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new LocationAdapter(mLocation);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
     }
 }

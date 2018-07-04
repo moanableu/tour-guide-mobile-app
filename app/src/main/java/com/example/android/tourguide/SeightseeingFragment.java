@@ -17,7 +17,7 @@ public class SeightseeingFragment extends Fragment {
     private ArrayList<Location> mLocation;
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter; // limits displayed data  for improved performance
+    private LocationAdapter mAdapter; // limits displayed data  for improved performance
     private RecyclerView.LayoutManager mLayoutManager; //aligns items
 
     public SeightseeingFragment(){
@@ -36,11 +36,19 @@ public class SeightseeingFragment extends Fragment {
 
         // add onItemClickListener
         mRecyclerView = rootView.findViewById(R.id.recyclerView);
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        mAdapter = new LocationAdapter(mLocation);
+        //mLayoutManager = new LinearLayoutManager(getActivity());
+        //mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mAdapter = new LocationAdapter(locations);
 
+        mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(new LocationAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                mLocation.get(position);
+            }
+        });
 
         return rootView;
 } }
