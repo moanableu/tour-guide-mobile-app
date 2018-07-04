@@ -31,13 +31,13 @@ public class Location implements Parcelable {
         mImage = image;
     }
 
-    public Location(String name, String description, String website, String schedule, String address, int image, String entryFee){
+    public Location(int image, String name, String description, String website, String schedule, String address, String entryFee){
+        mImage = image;
         mName = name;
         mDescription = description;
         mWebsite = website;
         mSchedule = schedule;
         mAddress = address;
-        mImage = image;
         mEntryFee = entryFee;
     }
 
