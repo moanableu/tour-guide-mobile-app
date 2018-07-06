@@ -9,6 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -22,6 +25,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ArrayList<Location> mLocation;
     private DrawerLayout drawer;
 
+    // testing to see if I can implement the recycler view here directly
+    private TextView name1, name, description1, description;
+    private ImageView image0, image1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         new SeightseeingFragment();
-        new CategoryFragment();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -42,6 +48,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navbaropen, R.string.navbarclose);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        final ArrayList<Tour> tours = new ArrayList <Tour>();
+        tours.add(new Tour(R.drawable.seightseeing, "Museums & Kust", "Hammock pour-over chambray normcore YOLO vinyl."));
+        tours.add(new Tour(R.drawable.seightseeing, "Restaurants & Breweries", "Distillery butcher portland celiac cray."));
+        tours.add(new Tour(R.drawable.seightseeing, "Seightseeing", "Banjo polaroid selvage pitchfork asymmetrical, tumblr heirloom pour-over raw denim."));
+        tours.add(new Tour(R.drawable.seightseeing, "Berlinale","Quinoa fixie subway tile man bun skateboard dreamcatcher."));
+
+        TourAdapter adapter = new TourAdapter(this, tours);
+        ListView listView = findViewById(R.id.tour_list);
+        listView.setAdapter(adapter);
+
+        //pending onItemClick method
     }
 
     @Override
