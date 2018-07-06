@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity"
     android:scrollbars="vertical"
-
     android:layout_height="match_parent">
 
     <android.support.v7.widget.RecyclerView
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="4dp"
         android:scrollbars="vertical"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/transparent"
         android:layout_marginBottom="4dp"/>
 
 </RelativeLayout>
