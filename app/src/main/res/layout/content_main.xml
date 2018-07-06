@@ -15,6 +15,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/list_main"
         android:layout_margin="8dp"
         android:paddingVertical="4dp">
 

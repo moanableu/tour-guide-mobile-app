@@ -1,5 +1,6 @@
 package com.example.android.tourguide;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -55,6 +56,13 @@ public class SeightseeingFragment extends Fragment {
             @Override
             public void onItemClick(int position) {
                 mLocation.get(position);
+
+               /* Intent intent = new Intent(getActivity(), SeightseeingCard.class); // TBT onItemClickListener + create card class!!
+                if (getActivity().getIntent() != null){
+                    intent.putExtra("position", position);
+                    intent.putExtra("cardItem", mCard.get(position));
+                }
+                startActivity(intent);*/
             }
         });
 
