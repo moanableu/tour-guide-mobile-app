@@ -8,27 +8,18 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class CategoryAdapter extends FragmentPagerAdapter {
     private Context mContext;
 
-    public CategoryAdapter(Context context, FragmentManager fm) {
+    public CategoryAdapter(FragmentManager fm) {
         super(fm);
-        mContext = context;
     }
+
 
     @Override
     public Fragment getItem(int position) {
-        if (position == 0){
-            return new IntroFragment();
-        } else if (position == 1){
-            return new MuseumArtActivity();
-        } else if (position == 2){
-            return new SeightseeingFragment();
-        } else if (position == 3){
-            return new FoodDrinkFragment();
-        } else {
-        return new BerlinaleFragment();}
+        return null;
     }
 
     @Override
     public int getCount() {
-        return 5;
+        return 0;
     }
 }
