@@ -7,7 +7,7 @@
         <item
             android:id="@+id/nav_seightseeing"
             android:icon="@drawable/seightseeing"
-            android:title="@string/seightseeing" />
+            android:title="@string/museums_kust" />
         <item
             android:id="@+id/nav_seightseeing1"
             android:icon="@drawable/seightseeing"
@@ -16,11 +16,11 @@
         <item
             android:id="@+id/nav_seightseeing2"
             android:icon="@drawable/seightseeing"
-            android:title="@string/seightseeing" />
+            android:title="@string/food_drinks" />
         <item
             android:id="@+id/nav_seightseeing3"
             android:icon="@drawable/seightseeing"
-            android:title="@string/seightseeing" />
+            android:title="@string/berlinale" />
     </group>
 
     <item android:title="Itinerary">
