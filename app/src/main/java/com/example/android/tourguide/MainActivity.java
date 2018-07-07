@@ -21,13 +21,12 @@ import java.util.ArrayList;
  */
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ArrayList<TourCategory> mTourCategory;
     private ArrayList<Location> mLocation;
-    private DrawerLayout drawer;
+    private DrawerLayout drawer;/*
 
     // testing to see if I can implement the recycler view here directly
     private TextView name1, name, description1, description;
-    private ImageView image0, image1;
+    private ImageView image0, image1;*/
 
 
     @Override
@@ -50,10 +49,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         final ArrayList<Tour> tours = new ArrayList <Tour>();
-        tours.add(new Tour(R.drawable.seightseeing, "Museums & Kust", "Hammock pour-over chambray normcore YOLO vinyl."));
-        tours.add(new Tour(R.drawable.seightseeing, "Restaurants & Breweries", "Distillery butcher portland celiac cray."));
-        tours.add(new Tour(R.drawable.seightseeing, "Seightseeing", "Banjo polaroid selvage pitchfork asymmetrical, tumblr heirloom pour-over raw denim."));
-        tours.add(new Tour(R.drawable.seightseeing, "Berlinale","Quinoa fixie subway tile man bun skateboard dreamcatcher."));
+        tours.add(new Tour(R.drawable.seightseeing, "Museums & Kust", "Hammock pour-over \nchambray normcore YOLO vinyl."));
+        tours.add(new Tour(R.drawable.seightseeing, "Restaurants & Breweries", "Distillery butcher portland celiac \ncray."));
+        tours.add(new Tour(R.drawable.seightseeing, "Seightseeing", "Banjo polaroid selvage pitchfork \nasymmetrical, tumblr heirloom \npour-over raw denim."));
+        tours.add(new Tour(R.drawable.seightseeing, "Berlinale","Quinoa fixie subway tile man bun \nskateboard dreamcatcher."));
 
         TourAdapter adapter = new TourAdapter(this, tours);
         ListView listView = findViewById(R.id.tour_list);
@@ -66,13 +65,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_seightseeing:
-                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new SeightseeingFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtFragment()).commit();
                 break;
             case R.id.nav_seightseeing1:
                 getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new SeightseeingFragment()).commit();
                 break;
             case R.id.nav_seightseeing2:
-                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new SeightseeingFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new FoodDrinkFragment()).commit();
+                break;
+            case R.id.nav_seightseeing3:
+                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new BerlinaleFragment()).commit();
                 break;
             case R.id.calendar:
                 Toast.makeText(this, "Save to calendar", Toast.LENGTH_SHORT).show();
