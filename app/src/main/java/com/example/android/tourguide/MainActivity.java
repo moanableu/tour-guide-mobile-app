@@ -48,15 +48,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        final ArrayList<Tour> tours = new ArrayList <Tour>();
-        tours.add(new Tour(R.drawable.seightseeing, "Museums & Kust", "Hammock pour-over \nchambray normcore YOLO vinyl."));
-        tours.add(new Tour(R.drawable.seightseeing, "Restaurants & Breweries", "Distillery butcher portland celiac \ncray."));
-        tours.add(new Tour(R.drawable.seightseeing, "Seightseeing", "Banjo polaroid selvage pitchfork \nasymmetrical, tumblr heirloom \npour-over raw denim."));
-        tours.add(new Tour(R.drawable.seightseeing, "Berlinale","Quinoa fixie subway tile man bun \nskateboard dreamcatcher."));
+        /*final ArrayList<Tour> tours = new ArrayList <Tour>();
+        tours.add(new Tour(R.drawable.seightseeing, (R.string.museums_kust), getString(R.string.seigtseeing_intro)));
+        tours.add(new Tour(R.drawable.seightseeing, "Restaurants & Breweries", getString(R.string.kunst_intro)));
+        tours.add(new Tour(R.drawable.seightseeing, "Seightseeing", getString(R.string.food_intro)));
+        tours.add(new Tour(R.drawable.seightseeing, "Berlinale",getString(R.string.berlinale_intro)));
 
         TourAdapter adapter = new TourAdapter(this, tours);
         ListView listView = findViewById(R.id.tour_list);
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter);*/
 
         //pending onItemClick method
     }

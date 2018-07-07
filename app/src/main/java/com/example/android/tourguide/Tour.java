@@ -2,10 +2,10 @@ package com.example.android.tourguide;
 
 public class Tour {
     private int mImage;
-    private String mName;
+    private int mName;
     private String mDescription;
 
-    public Tour(int image, String name, String description){
+    public Tour(int image, int name, String description){
         mImage = image;
         mName = name;
         mDescription = description;
@@ -15,7 +15,7 @@ public class Tour {
         return mImage;
     }
 
-    public String getName() {
+    public int getName() {
         return mName;
     }
 
