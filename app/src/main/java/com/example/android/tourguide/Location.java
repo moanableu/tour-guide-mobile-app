@@ -6,13 +6,21 @@ import android.os.Parcelable;
 public class Location implements Parcelable {
 
     private String mName;
+    private int mName1;
     private String mDescription;
+    private int mDescription1;
     private String mWebsite;
     private String mSchedule;
     private String mAddress;
     private int mImage = NO_IMAGE;
     private String mEntryFee;
     private static final int NO_IMAGE = -1;
+
+    public Location (int image, int name, int description){
+        mImage = image;
+        mName1 = name;
+        mDescription1 = description;
+    }
 
     public Location (String name, String description, String website, String schedule, String address){
         mName = name;

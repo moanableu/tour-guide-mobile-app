@@ -12,14 +12,14 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public class MuseumArtFragment extends Fragment {
+public class IntroFragment extends Fragment {
     private ArrayList<Location> mLocation;
 
     private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter; // limits displayed data  for improved performance
     private RecyclerView.LayoutManager mLayoutManager; //aligns items
 
-    public MuseumArtFragment(){
+    public IntroFragment(){
         // required emtpy constructor
     }
 
@@ -30,16 +30,10 @@ public class MuseumArtFragment extends Fragment {
 
 
         final ArrayList<Location> locations = new ArrayList <Location>();
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
-
+        locations.add(new Location(R.drawable.seightseeing, (R.string.museums_kust), (R.string.kunst_intro)));
+        locations.add(new Location(R.drawable.seightseeing, (R.string.seightseeing), (R.string.seigtseeing_intro)));
+        locations.add(new Location(R.drawable.seightseeing, (R.string.food_drinks), (R.string.food_intro)));
+        locations.add(new Location(R.drawable.seightseeing, (R.string.berlinale),(R.string.berlinale_intro)));
         // add onItemClickListener
 
         mRecyclerView = rootView.findViewById(R.id.recyclerView);

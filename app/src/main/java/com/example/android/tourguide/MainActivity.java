@@ -1,16 +1,21 @@
 package com.example.android.tourguide;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.ListView;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,11 +27,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ArrayList<Location> mLocation;
-    private DrawerLayout drawer;/*
-
-    // testing to see if I can implement the recycler view here directly
-    private TextView name1, name, description1, description;
-    private ImageView image0, image1;*/
+    private DrawerLayout drawer;
+    private RecyclerView mRecyclerView;
+    private LocationAdapter mAdapter; // limits displayed data  for improved performance
+    private RecyclerView.LayoutManager mLayoutManager;
 
 
     @Override
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new SeightseeingFragment();
+        new IntroFragment();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -48,24 +52,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        final ArrayList<Tour> tours = new ArrayList <Tour>();
-        tours.add(new Tour(R.drawable.seightseeing, "Museums & Kust", "Hammock pour-over \nchambray normcore YOLO vinyl."));
-        tours.add(new Tour(R.drawable.seightseeing, "Restaurants & Breweries", "Distillery butcher portland celiac \ncray."));
-        tours.add(new Tour(R.drawable.seightseeing, "Seightseeing", "Banjo polaroid selvage pitchfork \nasymmetrical, tumblr heirloom \npour-over raw denim."));
-        tours.add(new Tour(R.drawable.seightseeing, "Berlinale","Quinoa fixie subway tile man bun \nskateboard dreamcatcher."));
+        mRecyclerView = findViewById(R.id.recyclerView);
+        mLayoutManager = new LinearLayoutManager(this);
+        mAdapter = new LocationAdapter(mLocation);
 
-        TourAdapter adapter = new TourAdapter(this, tours);
-        ListView listView = findViewById(R.id.tour_list);
-        listView.setAdapter(adapter);
-
-        //pending onItemClick method
-    }
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
+        }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_seightseeing:
-                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtActivity()).commit();
                 break;
             case R.id.nav_seightseeing1:
                 getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new SeightseeingFragment()).commit();
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Get directions", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.share:
-                Toast.makeText(this, "Save to calendar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
                 break;
         }
 
