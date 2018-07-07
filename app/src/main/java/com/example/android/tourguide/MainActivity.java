@@ -1,5 +1,6 @@
 package com.example.android.tourguide;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -9,8 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.ListView;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,19 +23,17 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ArrayList<Location> mLocation;
-    private DrawerLayout drawer;/*
+    private DrawerLayout drawer;
 
-    // testing to see if I can implement the recycler view here directly
-    private TextView name1, name, description1, description;
-    private ImageView image0, image1;*/
+
+    private TextView tour_name, tour_name1, tour_name2, tour_name3;
+    //private ImageView image0, image1;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        new SeightseeingFragment();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -48,24 +47,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        /*final ArrayList<Tour> tours = new ArrayList <Tour>();
-        tours.add(new Tour(R.drawable.seightseeing, (R.string.museums_kust), getString(R.string.seigtseeing_intro)));
-        tours.add(new Tour(R.drawable.seightseeing, "Restaurants & Breweries", getString(R.string.kunst_intro)));
-        tours.add(new Tour(R.drawable.seightseeing, "Seightseeing", getString(R.string.food_intro)));
-        tours.add(new Tour(R.drawable.seightseeing, "Berlinale",getString(R.string.berlinale_intro)));
+        final LocationAdapter adapter = new LocationAdapter(mLocation);
 
-        TourAdapter adapter = new TourAdapter(this, tours);
-        ListView listView = findViewById(R.id.tour_list);
-        listView.setAdapter(adapter);*/
-
-        //pending onItemClick method
-    }
+        FrameLayout frame1 = findViewById(R.id.category_container);
+        frame1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MuseumArtActivity.class);
+                startActivity(intent);
+            }
+        });
+        }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_seightseeing:
-                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtActivity()).commit();
                 break;
             case R.id.nav_seightseeing1:
                 getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new SeightseeingFragment()).commit();
@@ -83,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "Get directions", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.share:
-                Toast.makeText(this, "Save to calendar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
                 break;
         }
 
