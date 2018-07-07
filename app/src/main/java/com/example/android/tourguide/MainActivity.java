@@ -54,17 +54,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navbaropen, R.string.navbarclose);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-/*
 
-        mRecyclerView = this.findViewById(R.id.recyclerView);
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new LocationAdapter(mLocation);
-
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
-*/
-
+       /* ViewPager viewPager = findViewById(R.id.viewpager);
+        CategoryAdapter adapter = new CategoryAdapter(this, getSupportFragmentManager());
+        viewPager.setAdapter(adapter);*/
 
         }
 

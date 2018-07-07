@@ -26,37 +26,17 @@ public class IntroFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.rb_recyclerview,container,false);
+        View rootView = inflater.inflate(R.layout.content_main,container,false);
 
 
-        final ArrayList<Location> locations = new ArrayList <Location>();
-        locations.add(new Location(R.drawable.seightseeing, (R.string.museums_kust), (R.string.kunst_intro)));
-        locations.add(new Location(R.drawable.seightseeing, (R.string.seightseeing), (R.string.seigtseeing_intro)));
-        locations.add(new Location(R.drawable.seightseeing, (R.string.food_drinks), (R.string.food_intro)));
-        locations.add(new Location(R.drawable.seightseeing, (R.string.berlinale),(R.string.berlinale_intro)));
+        final ArrayList<Tour> tours = new ArrayList <Tour>();
+        tours.add(new Tour(R.drawable.seightseeing, (R.string.museums_kust), (R.string.kunst_intro)));
+        tours.add(new Tour(R.drawable.seightseeing, (R.string.seightseeing), (R.string.seigtseeing_intro)));
+        tours.add(new Tour(R.drawable.seightseeing, (R.string.food_drinks), (R.string.food_intro)));
+        tours.add(new Tour(R.drawable.seightseeing, (R.string.berlinale),(R.string.berlinale_intro)));
         // add onItemClickListener
 
-        mRecyclerView = rootView.findViewById(R.id.recyclerView);
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        mAdapter = new LocationAdapter(locations);
-
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
-
-        mAdapter.setOnItemClickListener(new LocationAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                mLocation.get(position);
-
-               /* Intent intent = new Intent(getActivity(), SeightseeingCard.class); // TBT onItemClickListener + create card class!!
-                if (getActivity().getIntent() != null){
-                    intent.putExtra("position", position);
-                    intent.putExtra("cardItem", mCard.get(position));
-                }
-                startActivity(intent);*/
-            }
-        });
+        // add adapter
 
         return rootView;
 
