@@ -22,7 +22,6 @@
     </android.support.design.widget.AppBarLayout>
 
    <!-- <include layout="@layout/content_main"/>-->
-
-    <include layout="@layout/rb_recyclerview"/>
+   <!-- when included it pulls intro activity in fragments-->
 
 </android.support.design.widget.CoordinatorLayout>

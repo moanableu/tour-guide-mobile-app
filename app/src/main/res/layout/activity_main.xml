@@ -13,10 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <include layout="@layout/rb_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -37,5 +33,12 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/top_nav"
         app:menu="@menu/nav_menu" />
+
+   <!-- <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </android.support.v4.view.ViewPager>-->
 
 </android.support.v4.widget.DrawerLayout>

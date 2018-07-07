@@ -2,8 +2,11 @@ package com.example.android.tourguide;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import java.util.ArrayList;
 
 public class CategoryAdapter extends FragmentPagerAdapter {
     private Context mContext;
@@ -12,6 +15,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         super(fm);
         mContext = context;
     }
+
 
     @Override
     public Fragment getItem(int position) {
@@ -24,7 +28,8 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         } else if (position == 3){
             return new FoodDrinkFragment();
         } else {
-        return new BerlinaleFragment();}
+            return new BerlinaleFragment();
+        }
     }
 
     @Override
