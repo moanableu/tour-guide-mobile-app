@@ -19,12 +19,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    </LinearLayout>
-
     <FrameLayout
         android:id="@+id/f_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    </LinearLayout>
+
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
@@ -34,20 +35,5 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/top_nav"
         app:menu="@menu/nav_menu" />
-
-    <!--when adding fragment statically we loose logic that initializes fragments dynamically
-    <fragment
-        android:layout_width="match_parent"
-        android:name="com.example.android.tourguide.IntroFragment"
-        android:layout_height="match_parent"
-        android:id="@+id/fragment"/>-->
-
-   <!-- when using ViewPager navBar functionality goes away
-   <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </android.support.v4.view.ViewPager>-->
 
 </android.support.v4.widget.DrawerLayout>

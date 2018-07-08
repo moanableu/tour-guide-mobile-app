@@ -21,7 +21,4 @@
 
     </android.support.design.widget.AppBarLayout>
 
-   <!-- <include layout="@layout/content_main"/>-->
-   <!-- when included it pulls intro activity in fragments-->
-
 </android.support.design.widget.CoordinatorLayout>

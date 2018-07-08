@@ -58,23 +58,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        /* this give the following error: No view found (/tourguide:id/content_container) for fragment IntroFragment
-        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.content_container, new IntroFragment());
-        ft.commit();*/
-
-       /* if Viewpager is used navbar goes away
-        ViewPager viewPager = findViewById(R.id.viewpager);
-        CategoryAdapter adapter = new CategoryAdapter(this, getSupportFragmentManager());
-        viewPager.setAdapter(adapter);*/
-
-       //testing this method 7/7/18 21:16
-        // srill we can see that content_main is inflated behind the RecyclerView
-        LayoutInflater inflater = getLayoutInflater();
-        LinearLayout container = (LinearLayout) findViewById(R.id.v_container);
-        inflater.inflate(R.layout.content_main,container);
-
+        if(savedInstanceState == null){
+        getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new IntroFragment()).commit();
+            }
         }
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -105,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
     @Override
     public void onBackPressed() {
