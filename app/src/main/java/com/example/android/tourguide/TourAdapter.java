@@ -17,7 +17,7 @@ public class TourAdapter extends ArrayAdapter {
     TextView name, description;
     ImageView image;
 
-    public TourAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Tour> tours) {
+    public TourAdapter(@NonNull Context context, @NonNull ArrayList <Tour> tours) {
         super(context, 0, tours);
     }
 
