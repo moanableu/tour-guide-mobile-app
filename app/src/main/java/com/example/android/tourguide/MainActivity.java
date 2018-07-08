@@ -29,7 +29,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /**
- * resources: Coding in Flow Navigation Drawer with Fragments
+ * resources: Coding in Flow Navigation Drawer with Fragments tutorial
+ * I also reverse engineered the template navigation bar that Android Studio provides
  */
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(savedInstanceState == null){
         getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new IntroFragment()).commit();
+        navigationView.setCheckedItem(R.id.nav_intro);
             }
         }
 
@@ -68,6 +70,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.nav_intro:
+                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new IntroFragment()).commit();
+                break;
             case R.id.nav_seightseeing:
                 getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtActivity()).commit();
                 break;
