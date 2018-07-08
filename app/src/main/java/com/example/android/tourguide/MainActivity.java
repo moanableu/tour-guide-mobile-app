@@ -1,8 +1,10 @@
 package com.example.android.tourguide;
 
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -15,9 +17,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter; // limits displayed data  for improved performance
     private RecyclerView.LayoutManager mLayoutManager;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +58,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-       /* ViewPager viewPager = findViewById(R.id.viewpager);
+        /* this give the following error: No view found (/tourguide:id/content_container) for fragment IntroFragment
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.add(R.id.content_container, new IntroFragment());
+        ft.commit();*/
+
+       /* if Viewpager is used navbar goes away
+        ViewPager viewPager = findViewById(R.id.viewpager);
         CategoryAdapter adapter = new CategoryAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(adapter);*/
+
+       //testing this method 7/7/18 21:16
+        // srill we can see that content_main is inflated behind the RecyclerView
+        LayoutInflater inflater = getLayoutInflater();
+        LinearLayout container = (LinearLayout) findViewById(R.id.v_container);
+        inflater.inflate(R.layout.content_main,container);
 
         }
 
@@ -98,6 +113,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();}
     }
-
 
 }
