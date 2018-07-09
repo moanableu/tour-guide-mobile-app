@@ -14,6 +14,6 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="@string/app_name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 </LinearLayout>

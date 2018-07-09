@@ -1,15 +1,20 @@
 package com.example.android.tourguide;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +29,7 @@ public class IntroFragment extends Fragment {
     TourAdapter adapter;
     IntroFragment listener;
     private ArrayList<Location> mLocation;
+    private DrawerLayout drawer;
 
     private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter; // limits displayed data  for improved performance
@@ -47,7 +53,7 @@ public class IntroFragment extends Fragment {
 
         // add adapter
         TourAdapter adapter = new TourAdapter(getActivity(),tours);
-        ListView lv = rootView.findViewById(R.id.list);
+        ListView lv = rootView.findViewById(R.id.into_list);
         lv.setAdapter(adapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -56,8 +62,20 @@ public class IntroFragment extends Fragment {
                 Tour tour = tours.get(position);
                 //Log.i("selected item: ","position" + position);
 
-                //VERIFY THAT If IS PART OF THE RUBRIC OR NOT!
-                //Intent i = new Intent(getActivity(),)
+                switch (position){
+                    case 0:
+                        getFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtActivity()).commit();
+                        break;
+                    case 1:
+                        getFragmentManager().beginTransaction().replace(R.id.f_container, new SeightseeingFragment()).commit();
+                        break;
+                    case 2:
+                        getFragmentManager().beginTransaction().replace(R.id.f_container, new FoodDrinkFragment()).commit();
+                        break;
+                    case 3:
+                        getFragmentManager().beginTransaction().replace(R.id.f_container, new BerlinaleFragment()).commit();
+                        break;
+                }
             }
         });
 
