@@ -61,12 +61,12 @@ public class MuseumArtActivity extends Fragment {
             @Override
             public void onItemClick(int position) {
                 mLocation.get(position);
-                Log.i("position is ", "No: " + position);
 
                 Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
                     intent.putExtra("position", position);
                     intent.putExtra("cardItem", mLocation.get(position));
+                    Log.i("position is ", "No: " + position);
                 }
                 startActivity(intent);
             }
