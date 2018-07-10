@@ -17,4 +17,10 @@
     <string name="food_intro">Banjo polaroid selvage pitchfork \nasymmetrical, tumblr heirloom \npour-over raw denim.</string>
     <string name="berlinale_intro">Quinoa fixie subway tile man bun \nskateboard dreamcatcher.</string>
     <string name="home">Home</string>
+
+    <string name="fd_bar_1">Monkey Bar</string>
+    <string name="fd_bar_1_hours">Mo-Su 12pm -2am</string>
+    <string name="fd_bar_1_address">Budapester Straße 40 \n10. Stock 10787 Berlin</string>
+    <string name="hours">Hours:</string>
+    <string name="mk_1_fee"><![CDATA[3-day pass \&euro;29.00]]></string>
 </resources>

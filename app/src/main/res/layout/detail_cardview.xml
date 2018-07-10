@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="16dp"
+    android:layout_marginTop="16dp"
+    android:foreground="@color/cardview_shadow_end_color"
+    app:cardCornerRadius="-1dp"
+    app:cardElevation="10dp"
+    app:cardPreventCornerOverlap="true">
+
+    <RelativeLayout
+        android:id="@+id/detail_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:paddingVertical="4dp">
+
+        <ImageView
+            android:id="@+id/detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="309dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="0dp"
+            android:padding="0dp"
+            android:src="@drawable/seightseeing" />
+
+        <TextView
+            android:id="@+id/detail_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="148dp"
+            android:layout_marginStart="27dp"
+            android:gravity="bottom"
+            android:paddingBottom="1dp"
+            android:paddingRight="2dp"
+            android:paddingTop="1dp"
+            android:text="@string/fd_bar_1"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_above="@id/hours_bold"
+            android:layout_alignStart="@+id/detail_name"
+            android:layout_marginBottom="110dp"
+            android:paddingBottom="2dp"
+            android:maxLines="2"
+            android:paddingTop="1dp"
+            android:text="@string/fd_bar_1_address"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/hours_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/detail_name"
+            android:layout_alignTop="@+id/hours"
+            android:paddingBottom="2dp"
+            android:paddingTop="1dp"
+            android:text="@string/hours"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hours"
+            android:layout_width="297dp"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/hours_bold"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="86dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="1dp"
+            android:text="@string/fd_bar_1_hours"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/fees"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/detail_description"
+            android:layout_alignStart="@+id/detail_name"
+            android:paddingBottom="2dp"
+            android:paddingTop="1dp"
+            android:text="@string/mk_1_fee"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/detail_description"
+            android:layout_width="match_parent"
+            android:layout_alignStart="@id/detail_name"
+            android:layout_height="62dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:maxLines="5"
+            android:paddingBottom="1dp"
+            android:paddingTop="2dp"
+            android:text="@string/berlinale_intro"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
