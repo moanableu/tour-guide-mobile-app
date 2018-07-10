@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 public class MuseumArtActivity extends Fragment {
     private ArrayList<Location> mLocation;
+    private LocationAdapter.OnItemClickListener mListener;
 
     private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter; // limits displayed data  for improved performance
@@ -22,6 +24,10 @@ public class MuseumArtActivity extends Fragment {
 
     public MuseumArtActivity(){
         // required emtpy constructor
+    }
+
+    public void setOnItemClickListener(LocationAdapter.OnItemClickListener listener){
+        mListener = listener;
     }
 
     @Nullable
@@ -59,13 +65,14 @@ public class MuseumArtActivity extends Fragment {
             @Override
             public void onItemClick(int position) {
                 mLocation.get(position);
+                Log.i("position is ", "No: " + position);
 
-               /* Intent intent = new Intent(getActivity(), SeightseeingCard.class); // TBT onItemClickListener + create card class!!
+                Intent intent = new Intent(getActivity(), TourDetailCard.class);
                 if (getActivity().getIntent() != null){
                     intent.putExtra("position", position);
-                    intent.putExtra("cardItem", mCard.get(position));
+                    intent.putExtra("cardItem", mLocation.get(position));
                 }
-                startActivity(intent);*/
+                startActivity(intent);
             }
         });
 
