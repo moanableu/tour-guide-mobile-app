@@ -57,7 +57,7 @@ public class BerlinaleFragment extends Fragment {
             public void onItemClick(int position) {
                 mLocation.get(position);
 
-                /*Intent intent = new Intent(getActivity(), TourDetailCard.class); // TBT onItemClickListener + create card class!!
+                /*Intent intent = new Intent(getActivity(), DetailCard.class); // TBT onItemClickListener + create card class!!
                 if (getActivity().getIntent() != null){
                     intent.putExtra("position", position);
                     intent.putExtra("cardItem", mCard.get(position));
