@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class DetailCard extends AppCompatActivity {
     private ImageView detailImage;
-    private TextView detailTitle, detailDescription, hours, fees;
+    private TextView detailTitle, detailDescription, dHours, fees;
     private ArrayList <Location> mLocation;
     private LocationAdapter mAdapter;
     private LocationAdapter.OnItemClickListener mListener;
@@ -28,10 +28,9 @@ public class DetailCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_card);
 
-        new ArrayList<Location>();
+        ArrayList<Location> locations = new ArrayList <>();
 
-
-        LocationAdapter adapter = new LocationAdapter(mLocation);
+        LocationAdapter adapter = new LocationAdapter(this.mLocation);
         RecyclerView rv = findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(this);
 
@@ -41,7 +40,8 @@ public class DetailCard extends AppCompatActivity {
         Location location = tIntent.getParcelableExtra("position");
         int image = location.getImage();
         String name = location.getName();
-        //String address = location.getAddress();
+        String hours = location.getSchedule();
+        String description = location.getDescription();
 
         //create widgets
         detailImage = findViewById(R.id.detail_image);
@@ -50,7 +50,10 @@ public class DetailCard extends AppCompatActivity {
         detailTitle = findViewById(R.id.detail_name);
         detailTitle.setText(name);
 
-        /*hours = findViewById(R.id.detail_description);
-        hours.setText();*/
+        dHours = findViewById(R.id.hours);
+        dHours.setText(hours);
+
+        detailDescription = findViewById(R.id.detail_description);
+        detailDescription.setText(description);
     }
 }
