@@ -42,8 +42,6 @@ public class FoodDrinkFragment extends Fragment {
         locations.add(new Location(R.drawable.seightseeing,"Food7", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing,"Food8", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
 
-        // add onItemClickListener
-
         mRecyclerView = rootView.findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mAdapter = new LocationAdapter(locations);
@@ -51,21 +49,22 @@ public class FoodDrinkFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
+        mLocation = locations;
 
-       /* mAdapter.setOnItemClickListener(new LocationAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new LocationAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 mLocation.get(position);
-                //Log.i("Food item", "position is " + position);
+                Log.i("Food item", "position is " + position);
 
-               *//* Intent intent = new Intent(getActivity(), TourDetailCard.class); // TBT onItemClickListener + create card class!!
+               /* Intent intent = new Intent(getActivity(), DetailCard.class); // TBT onItemClickListener + create card class!!
                 if (getActivity().getIntent() != null){
                     intent.putExtra("position", position);
-                    intent.putExtra("cardItem", mCard.get(position));
+                    intent.putExtra("cardItem", mLocation.get(position));
                 }
-                startActivity(intent);*//*
+                startActivity(intent);*/
             }
-        });*/
+        });
 
         return rootView;
 

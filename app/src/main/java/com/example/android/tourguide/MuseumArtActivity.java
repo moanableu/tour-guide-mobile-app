@@ -46,12 +46,7 @@ public class MuseumArtActivity extends Fragment {
         locations.add(new Location(R.drawable.seightseeing,"Museumsinsel7", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing,"Museumsinsel8", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
 
-        // TBT intent using parcelable
-       /* Intent iLocation = getIntent();
-        Location location = iLocation.getParcelableExtra("locationItem");
-        int image = location.getImage();
-        String name = location.getName();
-        String description = location.getDescription();*/
+        mLocation = locations;
 
         mRecyclerView = rootView.findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(getActivity());
@@ -61,13 +56,14 @@ public class MuseumArtActivity extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+
         mAdapter.setOnItemClickListener(new LocationAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 mLocation.get(position);
                 Log.i("position is ", "No: " + position);
 
-                Intent intent = new Intent(getActivity(), TourDetailCard.class);
+                Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
                     intent.putExtra("position", position);
                     intent.putExtra("cardItem", mLocation.get(position));
