@@ -2,6 +2,7 @@ package com.example.android.tourguide;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.Locati
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION);{
                             listener.onItemClick(position);
+                            Log.i("position is ", "No: " + position);
                         }
                     }
                 }

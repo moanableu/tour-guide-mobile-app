@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ArrayList<Location> mLocation;
     private DrawerLayout drawer;
     private RecyclerView mRecyclerView;
-    private LocationAdapter mAdapter; // limits displayed data  for improved performance
+    private LocationAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new IntroFragment()).commit();
         navigationView.setCheckedItem(R.id.nav_intro);
             }
+
         }
 
     @Override
