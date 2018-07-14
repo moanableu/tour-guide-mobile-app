@@ -32,7 +32,7 @@ public class SeightseeingFragment extends Fragment {
 
 
         final ArrayList<Location> locations = new ArrayList <Location>();
-        locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
         locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
         locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));

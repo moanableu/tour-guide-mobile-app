@@ -14,15 +14,17 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public class MuseumArtActivity extends Fragment {
+public class MuseumArtFragment extends Fragment {
     private ArrayList<Location> mLocation;
     private LocationAdapter.OnItemClickListener mListener;
+    private static final String ARRAY = "array";
+    private static final String LOCATION = "location";
 
     private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter; // limits displayed data  for improved performance
     private RecyclerView.LayoutManager mLayoutManager; //aligns items
 
-    public MuseumArtActivity(){
+    public MuseumArtFragment(){
         // required emtpy constructor
     }
 
@@ -62,13 +64,16 @@ public class MuseumArtActivity extends Fragment {
             public void onItemClick(int position) {
                 mLocation.get(position);
 
-                Intent intent = new Intent(getActivity(), DetailCard.class);
+                Bundle bundle = getArguments();
+
+
+                /*Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
                     intent.putExtra("position", position);
                     intent.putExtra("cardItem", mLocation.get(position));
                     Log.i("position is ", "No: " + position);
                 }
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
 

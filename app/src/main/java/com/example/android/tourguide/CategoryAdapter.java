@@ -2,11 +2,8 @@ package com.example.android.tourguide;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
-import java.util.ArrayList;
 
 public class CategoryAdapter extends FragmentPagerAdapter {
     private Context mContext;
@@ -22,7 +19,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         if (position == 0){
             return new IntroFragment();
         } else if (position == 1){
-            return new MuseumArtActivity();
+            return new MuseumArtFragment();
         } else if (position == 2){
             return new SeightseeingFragment();
         } else if (position == 3){
