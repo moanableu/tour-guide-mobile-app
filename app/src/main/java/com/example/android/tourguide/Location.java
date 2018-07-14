@@ -3,7 +3,9 @@ package com.example.android.tourguide;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Location implements Parcelable {
+import java.util.ArrayList;
+
+public class Location extends ArrayList <Parcelable> implements Parcelable {
 
     private String mName;
     private int mName1;

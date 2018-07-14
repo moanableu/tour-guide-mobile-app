@@ -16,13 +16,10 @@ import java.util.ArrayList;
 
 public class IntroFragment extends Fragment {
     TourAdapter adapter;
-    IntroFragment listener;
-    private ArrayList<Location> mLocation;
-    private DrawerLayout drawer;
 
-    private RecyclerView mRecyclerView;
+   /* private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter; // limits displayed data  for improved performance
-    private RecyclerView.LayoutManager mLayoutManager; //aligns items
+    private RecyclerView.LayoutManager mLayoutManager; //aligns items*/
 
     public IntroFragment(){
         // required emtpy constructor
@@ -38,10 +35,8 @@ public class IntroFragment extends Fragment {
         tours.add(new Tour(R.drawable.seightseeing, (R.string.seightseeing), (R.string.seigtseeing_intro)));
         tours.add(new Tour(R.drawable.seightseeing, (R.string.food_drinks), (R.string.food_intro)));
         tours.add(new Tour(R.drawable.seightseeing, (R.string.berlinale),(R.string.berlinale_intro)));
-        // add onItemClickListener
 
-        // add adapter
-        TourAdapter adapter = new TourAdapter(getActivity(),tours);
+        adapter = new TourAdapter(getActivity(),tours);
         ListView lv = rootView.findViewById(R.id.intro_list);
         lv.setAdapter(adapter);
 
@@ -49,11 +44,10 @@ public class IntroFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView <?> parent, View view, int position, long id) {
                 Tour tour = tours.get(position);
-                //Log.i("selected item: ","position" + position);
 
                 switch (position){
                     case 0:
-                        getFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtActivity()).commit();
+                        getFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtFragment()).commit();
                         break;
                     case 1:
                         getFragmentManager().beginTransaction().replace(R.id.f_container, new SeightseeingFragment()).commit();
@@ -72,8 +66,4 @@ public class IntroFragment extends Fragment {
 
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        //super.onViewCreated(view, savedInstanceState);
-    }
 }

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //new DetailCard();
+        new DetailCard();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new IntroFragment()).commit();
                 break;
             case R.id.nav_seightseeing:
-                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtActivity()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new MuseumArtFragment()).commit();
                 break;
             case R.id.nav_seightseeing1:
                 getSupportFragmentManager().beginTransaction().replace(R.id.f_container, new SeightseeingFragment()).commit();

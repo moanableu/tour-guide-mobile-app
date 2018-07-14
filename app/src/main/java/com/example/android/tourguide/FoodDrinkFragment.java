@@ -57,12 +57,12 @@ public class FoodDrinkFragment extends Fragment {
                 mLocation.get(position);
                 Log.i("Food item", "position is " + position);
 
-               /* Intent intent = new Intent(getActivity(), DetailCard.class); // TBT onItemClickListener + create card class!!
+                Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
-                    intent.putExtra("position", position);
-                    intent.putExtra("cardItem", mLocation.get(position));
+                    //intent.putParcelableArrayListExtra("location", mLocation.get(position));
+                    Log.i("Museum position is ", "No: " + position);
                 }
-                startActivity(intent);*/
+                //startActivity(intent);
             }
         });
 
