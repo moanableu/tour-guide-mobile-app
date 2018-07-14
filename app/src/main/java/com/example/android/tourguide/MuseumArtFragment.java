@@ -1,5 +1,6 @@
 package com.example.android.tourguide;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 public class MuseumArtFragment extends Fragment {
     private ArrayList<Location> mLocation;
     private LocationAdapter.OnItemClickListener mListener;
-    private static final String ARRAY = "array";
+    private Context mContext;
     private static final String LOCATION = "location";
 
     private RecyclerView mRecyclerView;
@@ -78,5 +79,4 @@ public class MuseumArtFragment extends Fragment {
 
         return rootView;
     }
-
 }
