@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 
 public class SeightseeingFragment extends Fragment {
     private ArrayList<Location> mLocation;
+    private LocationAdapter.OnItemClickListener mListener;
 
     private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter; // limits displayed data  for improved performance
@@ -23,6 +25,10 @@ public class SeightseeingFragment extends Fragment {
 
     public SeightseeingFragment(){
         // required emtpy constructor
+    }
+
+    public void setOnItemClickListener(LocationAdapter.OnItemClickListener listener){
+        mListener = listener;
     }
 
     @Nullable
@@ -42,6 +48,8 @@ public class SeightseeingFragment extends Fragment {
         locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
         locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
 
+        mLocation = locations;
+
         // add onItemClickListener
 
         mRecyclerView = rootView.findViewById(R.id.recyclerView);
@@ -57,12 +65,12 @@ public class SeightseeingFragment extends Fragment {
             public void onItemClick(int position) {
                 mLocation.get(position);
 
-                /*Intent intent = new Intent(getActivity(), DetailCard.class); // TBT onItemClickListener + create card class!!
+                Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
-                    intent.putExtra("position", position);
-                    intent.putExtra("cardItem", mCard.get(position));
+                    //intent.putParcelableArrayListExtra("location", mLocation.get(position));
+                    Log.i("Seightseeing position is ", "No: " + position);
                 }
-                startActivity(intent);*/
+                //startActivity(intent);
             }
         });
 

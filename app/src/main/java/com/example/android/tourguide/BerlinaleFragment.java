@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class BerlinaleFragment extends Fragment {
     private ArrayList<Location> mLocation;
+    private LocationAdapter.OnItemClickListener mListener;
 
     private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter;
@@ -23,6 +24,10 @@ public class BerlinaleFragment extends Fragment {
 
     public BerlinaleFragment(){
         // required emtpy constructor
+    }
+
+    public void setOnItemClickListener(LocationAdapter.OnItemClickListener listener){
+        mListener = listener;
     }
 
     @Nullable
@@ -42,7 +47,7 @@ public class BerlinaleFragment extends Fragment {
         locations.add(new Location(R.drawable.seightseeing,"Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing,"Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
 
-        // add onItemClickListener
+        mLocation = locations;
 
         mRecyclerView = rootView.findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(getActivity());
@@ -57,12 +62,12 @@ public class BerlinaleFragment extends Fragment {
             public void onItemClick(int position) {
                 mLocation.get(position);
 
-                /*Intent intent = new Intent(getActivity(), DetailCard.class); // TBT onItemClickListener + create card class!!
+                Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
-                    intent.putExtra("position", position);
-                    intent.putExtra("cardItem", mCard.get(position));
+                    //intent.putParcelableArrayListExtra("location", mLocation.get(position));
+                    Log.i("Berlinale position is ", "No: " + position);
                 }
-                startActivity(intent);*/
+                //startActivity(intent);
             }
         });
 

@@ -16,13 +16,10 @@ import java.util.ArrayList;
 
 public class IntroFragment extends Fragment {
     TourAdapter adapter;
-    IntroFragment listener;
-    private ArrayList<Location> mLocation;
-    private DrawerLayout drawer;
 
-    private RecyclerView mRecyclerView;
+   /* private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter; // limits displayed data  for improved performance
-    private RecyclerView.LayoutManager mLayoutManager; //aligns items
+    private RecyclerView.LayoutManager mLayoutManager; //aligns items*/
 
     public IntroFragment(){
         // required emtpy constructor
@@ -39,7 +36,7 @@ public class IntroFragment extends Fragment {
         tours.add(new Tour(R.drawable.seightseeing, (R.string.food_drinks), (R.string.food_intro)));
         tours.add(new Tour(R.drawable.seightseeing, (R.string.berlinale),(R.string.berlinale_intro)));
 
-        TourAdapter adapter = new TourAdapter(getActivity(),tours);
+        adapter = new TourAdapter(getActivity(),tours);
         ListView lv = rootView.findViewById(R.id.intro_list);
         lv.setAdapter(adapter);
 

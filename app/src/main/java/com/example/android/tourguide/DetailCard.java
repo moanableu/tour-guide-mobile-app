@@ -16,51 +16,33 @@ import java.util.ArrayList;
 public class DetailCard extends AppCompatActivity {
     private ImageView detailImage;
     private TextView detailTitle, detailDescription, dHours, fees;
-    private ArrayList <Location> locations;
-    private LocationAdapter mAdapter;
-    private LocationAdapter.OnItemClickListener mListener;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private ArrayList <Location> mLocation;
 
+
+    private RecyclerView.LayoutManager mLayoutManager;
+    private LocationAdapter.OnItemClickListener mListener;
+
+    public void setOnItemClickListener(LocationAdapter.OnItemClickListener listener) {
+        mListener = listener;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_card);
 
-        LocationAdapter adapter = new LocationAdapter(locations);
+        mLocation = new ArrayList <>();
+
+        LocationAdapter adapter = new LocationAdapter(this.mLocation);
         RecyclerView rv = findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(this);
 
         rv.setAdapter(adapter);
 
-        if (savedInstanceState == null) {
-            locations = new ArrayList <Location>();
-           // locations.get(int);
-            getSupportFragmentManager().beginTransaction().replace(R.id.detail_card, new MuseumArtFragment()).commit();
-            /*switch (locations){
-                case 0:
-                    getFragmentManager().beginTransaction().replace(R.id.content_container, new MuseumArtFragment()).commit();
-                    break;
-                case 1:
-                    getFragmentManager().beginTransaction().replace(R.id.content_container, new SeightseeingFragment()).commit();
-                    break;
-                case 2:
-                    getFragmentManager().beginTransaction().replace(R.id.content_container, new FoodDrinkFragment()).commit();
-                    break;
-                case 3:
-                    getFragmentManager().beginTransaction().replace(R.id.content_container, new BerlinaleFragment()).commit();
-                    break;*/
-        } else {
-            locations = savedInstanceState.getParcelableArrayList("cardItem");
-        }
-
-        //getSupportFragmentManager().beginTransaction().add(android.R.id.content, locations).commit();
-
-        //locations = new ArrayList <>();
-
         Intent tIntent = getIntent();
-        Location location = tIntent.getParcelableExtra("cardItem");
-        int image = location.getImage();
+        //Location location = tIntent.getParcelableArrayListExtra("location");
+
+        /*int image = location.getImage();
         String name = location.getName();
         String hours = location.getSchedule();
         String description = location.getDescription();
@@ -76,8 +58,6 @@ public class DetailCard extends AppCompatActivity {
         dHours.setText(hours);
 
         detailDescription = findViewById(R.id.detail_description);
-        detailDescription.setText(description);
+        detailDescription.setText(description);*/
     }
-
-
 }
