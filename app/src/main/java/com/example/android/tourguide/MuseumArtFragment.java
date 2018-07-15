@@ -66,10 +66,11 @@ public class MuseumArtFragment extends Fragment {
             public void onItemClick(int position) {
                // mLocation = locations;
                 //Log.i("new array", "exists?"); // works
-               /* Bundle LArray = new Bundle();
-                LArray.putString("locationArray", "location passed");
-                MuseumArtFragment LFragment = new MuseumArtFragment();
-                LFragment.setArguments(Location);*/ // keeps asking for Expression Expected
+                Fragment LFragment = new MuseumArtFragment();
+                Bundle data = new Bundle();
+                data.putParcelableArrayList("array", mLocation);
+                Log.i("Bundle ", "passes"); // works
+                LFragment.setArguments(data);
 
                 mLocation.get(position);
                 Log.i("Museum position is ", "No: " + position); // works
@@ -82,7 +83,7 @@ public class MuseumArtFragment extends Fragment {
                     //intent.putParcelableArrayListExtra("location", mLocation.get(position));
                     Log.i("Museum2 position is ", "No: " + position); // works
                 }
-                //startActivity(intent);
+                startActivity(intent);
             }
         });
 
