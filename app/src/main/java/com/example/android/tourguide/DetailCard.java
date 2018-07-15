@@ -31,18 +31,18 @@ public class DetailCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_card);
 
-        mLocation = new ArrayList <>();
+        mLocation = new ArrayList <Location>();
 
-        LocationAdapter adapter = new LocationAdapter(this.mLocation);
+        DetailAdapter adapter = new DetailAdapter(this.mLocation);
         RecyclerView rv = findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(this);
 
         rv.setAdapter(adapter);
 
-        Intent tIntent = getIntent();
-        //Location location = tIntent.getParcelableArrayListExtra("location");
+      /*  Intent tIntent = getIntent();
+        Location location = tIntent.getParcelableExtra("passes");
 
-        /*int image = location.getImage();
+        int image = location.getImage();
         String name = location.getName();
         String hours = location.getSchedule();
         String description = location.getDescription();

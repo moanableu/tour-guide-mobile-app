@@ -1,5 +1,6 @@
 package com.example.android.tourguide;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,9 +13,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.LocationViewHolder> {
+public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailViewHolder> {
     private ArrayList<Location> mLocation;
     private OnItemClickListener mListener;
+    private LayoutInflater layoutInflater;
+    private Context mContext;
 
     public interface OnItemClickListener{
         void onItemClick(int position);
@@ -23,11 +26,11 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.Locati
         mListener = listener;
     }
 
-    public static class LocationViewHolder extends RecyclerView.ViewHolder{
+    public static class DetailViewHolder extends RecyclerView.ViewHolder{
         public ImageView mImage;
         public TextView mName, mDescription, mWebsite, mSchedule, mAddress, mEntryFee;
 
-        public LocationViewHolder(final View itemView, final OnItemClickListener listener) {
+        public DetailViewHolder(final View itemView, final OnItemClickListener listener) {
             super(itemView);
 
            /* views pending implementations
@@ -36,18 +39,22 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.Locati
             private String mAddress;
             private String mEntryFee;*/
 
-            mImage = itemView.findViewById(R.id.image);
-            mName = itemView.findViewById(R.id.name);
-            mDescription = itemView.findViewById(R.id.description);
+            mImage = itemView.findViewById(R.id.detail_image);
+            mName = itemView.findViewById(R.id.detail_name);
+            mDescription = itemView.findViewById(R.id.detail_description);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    Intent i = new Intent(v.getContext(), DetailCard.class);
                     if (listener != null){
                         int position = getAdapterPosition();
                         if (position != RecyclerView.NO_POSITION);{
                             listener.onItemClick(position);
-                            //Log.i("position is ", "No: " + position); // works
+                            i.putExtra("passes", position);
+                            Log.i("Detail position is ", "No: " + position); // works
+                            v.getContext().startActivity(i);
                         }
                     }
                 }
@@ -55,21 +62,22 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.Locati
         }
     }
 
-    public LocationAdapter(ArrayList<Location> locations){
+    public DetailAdapter(ArrayList <Location> locations){
+        this.layoutInflater = LayoutInflater.from(mContext);
         mLocation = locations;
     }
 
 
     @NonNull
     @Override
-    public LocationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rb_cardview,parent,false);
-        LocationViewHolder lvh = new LocationViewHolder(view, mListener);
-        return lvh;
+    public DetailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_detail_card,parent,false);
+        DetailViewHolder dvh = new DetailViewHolder(view, mListener);
+        return dvh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LocationViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DetailViewHolder holder, int position) {
         Location currentItem = mLocation.get(position);
 
         holder.mImage.setImageResource(currentItem.getImage());
