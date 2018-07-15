@@ -31,7 +31,6 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.Locati
             super(itemView);
 
            /* views pending implementations
-            private String mWebsite;
             private String mSchedule;
             private String mAddress;
             private String mEntryFee;*/
@@ -39,15 +38,16 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.Locati
             mImage = itemView.findViewById(R.id.image);
             mName = itemView.findViewById(R.id.name);
             mDescription = itemView.findViewById(R.id.description);
+            mWebsite = itemView.findViewById(R.id.website);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (listener != null){
-                        int position = getAdapterPosition();
+                        int position = getAdapterPosition(); // important section to call our current position!
                         if (position != RecyclerView.NO_POSITION);{
                             listener.onItemClick(position);
-                            //Log.i("position is ", "No: " + position); // works
+                            Log.i("LA position is ", "No: " + position); // works
                         }
                     }
                 }

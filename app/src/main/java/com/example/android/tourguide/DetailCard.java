@@ -33,14 +33,15 @@ public class DetailCard extends AppCompatActivity {
 
         mLocation = new ArrayList <Location>();
 
-        DetailAdapter adapter = new DetailAdapter(this.mLocation);
+        LocationAdapter adapter = new LocationAdapter(this.mLocation);
         RecyclerView rv = findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(this);
 
         rv.setAdapter(adapter);
 
-      /*  Intent tIntent = getIntent();
-        Location location = tIntent.getParcelableExtra("passes");
+        Intent tIntent = getIntent();
+
+        Location location = tIntent.getParcelableExtra("position");
 
         int image = location.getImage();
         String name = location.getName();
@@ -58,6 +59,6 @@ public class DetailCard extends AppCompatActivity {
         dHours.setText(hours);
 
         detailDescription = findViewById(R.id.detail_description);
-        detailDescription.setText(description);*/
+        detailDescription.setText(description);
     }
 }
