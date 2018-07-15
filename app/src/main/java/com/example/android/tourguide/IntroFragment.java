@@ -16,6 +16,9 @@ import java.util.ArrayList;
 
 public class IntroFragment extends Fragment {
     TourAdapter adapter;
+    IntroFragment listener;
+    private ArrayList<Location> mLocation;
+    private DrawerLayout drawer;
 
    /* private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter; // limits displayed data  for improved performance
@@ -66,4 +69,8 @@ public class IntroFragment extends Fragment {
 
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        //super.onViewCreated(view, savedInstanceState);
+    }
 }

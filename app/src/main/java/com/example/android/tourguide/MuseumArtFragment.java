@@ -28,11 +28,11 @@ public class MuseumArtFragment extends Fragment {
 
     public MuseumArtFragment(){
         // required emtpy constructor
-    }
+    }/*
 
     public void setOnItemClickListener(LocationAdapter.OnItemClickListener listener){
         mListener = listener;
-    }
+    }*/
 
     @Nullable
     @Override
@@ -64,14 +64,23 @@ public class MuseumArtFragment extends Fragment {
         mAdapter.setOnItemClickListener(new LocationAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                mLocation.get(position);
+               // mLocation = locations;
+                //Log.i("new array", "exists?"); // works
+               /* Bundle LArray = new Bundle();
+                LArray.putString("locationArray", "location passed");
+                MuseumArtFragment LFragment = new MuseumArtFragment();
+                LFragment.setArguments(Location);*/ // keeps asking for Expression Expected
 
-                Bundle bundle = getArguments();
+                mLocation.get(position);
+                Log.i("Museum position is ", "No: " + position); // works
+                //Bundle bundle = getArguments();
 
                 Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
+                    intent.putExtra("position", position);
+                    //intent.putExtra("LItem", mLocation.get(Location)),
                     //intent.putParcelableArrayListExtra("location", mLocation.get(position));
-                    Log.i("Museum position is ", "No: " + position);
+                    Log.i("Museum2 position is ", "No: " + position); // works
                 }
                 //startActivity(intent);
             }
