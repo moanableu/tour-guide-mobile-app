@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Location extends ArrayList <Parcelable> implements Parcelable {
 
+    private ArrayList<Location> mLocation;
     private String mName;
     private int mName1;
     private String mDescription;
@@ -33,22 +34,22 @@ public class Location extends ArrayList <Parcelable> implements Parcelable {
     }
 
     public Location(String name, String description, String website, String schedule, String address, int image){
-        mName = name;
-        mDescription = description;
-        mWebsite = website;
-        mSchedule = schedule;
-        mAddress = address;
-        mImage = image;
+        this.mName = name;
+        this.mDescription = description;
+        this.mWebsite = website;
+        this.mSchedule = schedule;
+        this.mAddress = address;
+        this.mImage = image;
     }
 
     public Location(int image, String name, String description, String website, String schedule, String address, String entryFee){
-        mImage = image;
-        mName = name;
-        mDescription = description;
-        mWebsite = website;
-        mSchedule = schedule;
-        mAddress = address;
-        mEntryFee = entryFee;
+        this.mImage = image;
+        this.mName = name;
+        this.mDescription = description;
+        this.mWebsite = website;
+        this.mSchedule = schedule;
+        this.mAddress = address;
+        this.mEntryFee = entryFee;
     }
 
     protected Location(Parcel in) {
