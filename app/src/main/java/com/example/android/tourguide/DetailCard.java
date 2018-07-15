@@ -41,7 +41,7 @@ public class DetailCard extends AppCompatActivity {
 
         Intent tIntent = getIntent();
 
-        Location location = tIntent.getParcelableExtra("position");
+        Location location = tIntent.getParcelableExtra("array");
 
         int image = location.getImage();
         String name = location.getName();
