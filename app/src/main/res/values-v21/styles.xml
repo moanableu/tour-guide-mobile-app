@@ -6,4 +6,10 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="style_main">
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:maxWidth">380dp</item>
+        <item name="android:textColor">@color/font</item>
+    </style>
+
 </resources>
