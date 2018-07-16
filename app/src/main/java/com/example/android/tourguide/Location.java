@@ -53,7 +53,6 @@ public class Location implements Parcelable {
     }
 
     protected Location(Parcel in) {
-        locations = new ArrayList<Location>();
         mName = in.readString();
         mDescription = in.readString();
         mWebsite = in.readString();
