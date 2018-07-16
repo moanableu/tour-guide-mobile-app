@@ -64,6 +64,9 @@ public class BerlinaleFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
+                    intent.putExtra("position", position);
+                    Location location = mLocation.get(position);
+                    intent.putExtra("location", location);
                     //intent.putParcelableArrayListExtra("location", mLocation.get(position));
                     Log.i("Berlinale position is ", "No: " + position);
                 }
