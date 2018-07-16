@@ -59,6 +59,9 @@ public class FoodDrinkFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
+                    intent.putExtra("position", position);
+                    Location location = mLocation.get(position);
+                    intent.putExtra("location", location);
                     //intent.putParcelableArrayListExtra("location", mLocation.get(position));
                     Log.i("Museum position is ", "No: " + position);
                 }

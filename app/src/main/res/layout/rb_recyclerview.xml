@@ -10,10 +10,10 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:padding="@dimen/d4dp"
         android:scrollbars="vertical"
         android:background="@android:color/transparent"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="@dimen/d4dp"
         android:layout_marginTop="56dp"/>
 
 </RelativeLayout>

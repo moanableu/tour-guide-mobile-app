@@ -67,8 +67,11 @@ public class SeightseeingFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
+                    intent.putExtra("position", position);
+                    Location location = mLocation.get(position);
+                    intent.putExtra("location", location);
                     //intent.putParcelableArrayListExtra("location", mLocation.get(position));
-                    Log.i("Seightseeing position is ", "No: " + position);
+                    Log.i("Seightseeing position ", "No: " + position);
                 }
                 //startActivity(intent);
             }

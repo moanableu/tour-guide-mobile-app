@@ -64,8 +64,6 @@ public class MuseumArtFragment extends Fragment {
         mAdapter.setOnItemClickListener(new LocationAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-               // mLocation = locations;
-                //Log.i("new array", "exists?"); // works
                 Fragment LFragment = new MuseumArtFragment();
                 Bundle data = new Bundle();
                 data.putParcelableArrayList("array", mLocation);
@@ -74,11 +72,12 @@ public class MuseumArtFragment extends Fragment {
 
                 mLocation.get(position);
                 Log.i("Museum position is ", "No: " + position); // works
-                //Bundle bundle = getArguments();
 
                 Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
                     intent.putExtra("position", position);
+                    Location location = mLocation.get(position);
+                    intent.putExtra("location", location);
                     //intent.putExtra("LItem", mLocation.get(Location)),
                     //intent.putParcelableArrayListExtra("location", mLocation.get(position));
                     Log.i("Museum2 position is ", "No: " + position); // works
