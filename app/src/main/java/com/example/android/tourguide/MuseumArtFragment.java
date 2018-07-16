@@ -28,11 +28,12 @@ public class MuseumArtFragment extends Fragment {
 
     public MuseumArtFragment(){
         // required emtpy constructor
-    }/*
+    }
+
 
     public void setOnItemClickListener(LocationAdapter.OnItemClickListener listener){
         mListener = listener;
-    }*/
+    }
 
     @Nullable
     @Override
@@ -70,15 +71,11 @@ public class MuseumArtFragment extends Fragment {
                 Log.i("Bundle ", "passes"); // works
                 LFragment.setArguments(data);
 
-                mLocation.get(position);
-                Log.i("Museum position is ", "No: " + position); // works
-
                 Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
                     intent.putExtra("position", position);
                     Location location = mLocation.get(position);
                     intent.putExtra("location", location);
-                    //intent.putExtra("LItem", mLocation.get(Location)),
                     //intent.putParcelableArrayListExtra("location", mLocation.get(position));
                     Log.i("Museum2 position is ", "No: " + position); // works
                 }

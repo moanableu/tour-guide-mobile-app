@@ -54,15 +54,11 @@ public class FoodDrinkFragment extends Fragment {
         mAdapter.setOnItemClickListener(new LocationAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-               // mLocation.get(position);
                 Fragment LFragment = new MuseumArtFragment();
                 Bundle data = new Bundle();
                 data.putParcelableArrayList("array", mLocation);
                 Log.i("Bundle ", "passes"); // works
                 LFragment.setArguments(data);
-
-                mLocation.get(position);
-                Log.i("Museum position is ", "No: " + position); // works
 
                 Intent intent = new Intent(getActivity(), DetailCard.class);
                 if (getActivity().getIntent() != null){
@@ -72,7 +68,7 @@ public class FoodDrinkFragment extends Fragment {
                     //intent.putParcelableArrayListExtra("location", mLocation.get(position));
                     Log.i("Museum position is ", "No: " + position);
                 }
-                //startActivity(intent);
+                startActivity(intent);
             }
         });
 
