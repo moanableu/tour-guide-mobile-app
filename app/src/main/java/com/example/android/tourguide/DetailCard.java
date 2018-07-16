@@ -31,7 +31,8 @@ public class DetailCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_card);
 
-        mLocation = new ArrayList <Location>();
+        //mLocation = new ArrayList <Location>();
+        ArrayList<Location> mLocation = new ArrayList <>();
 
         LocationAdapter adapter = new LocationAdapter(this.mLocation);
         RecyclerView rv = findViewById(R.id.recyclerView);
