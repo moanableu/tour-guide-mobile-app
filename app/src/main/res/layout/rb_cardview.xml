@@ -22,11 +22,11 @@
             android:id="@+id/image"
             android:layout_width="144dp"
             android:layout_height="144dp"
-            android:src="@drawable/seightseeing"
+            android:src="@drawable/food_intro"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_margin="1dp"
-            android:padding="2dp" />
+            android:padding="@dimen/d2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,13 +39,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="@dimen/d2dp"
             android:layout_marginStart="24dp"
             android:paddingBottom="1dp"
-            android:paddingRight="2dp"
+            android:paddingRight="@dimen/d2dp"
             android:paddingTop="1dp"
             android:text="name"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="@color/font"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -54,10 +54,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/name"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="@dimen/d2dp"
+            android:textColor="@color/font"
             android:layout_marginStart="24dp"
             android:layout_toEndOf="@id/image"
-            android:paddingBottom="2dp"
+            android:paddingBottom="@dimen/d2dp"
             android:paddingTop="1dp"
             tools:text="description"
             android:textSize="15sp" />

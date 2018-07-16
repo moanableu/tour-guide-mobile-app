@@ -5,9 +5,9 @@ import android.os.Parcelable;
 
 import java.util.ArrayList;
 
-public class Location extends ArrayList <Parcelable> implements Parcelable {
+public class Location implements Parcelable {
 
-    private ArrayList<Location> mLocation;
+    private ArrayList<Location> locations;
     private String mName;
     private int mName1;
     private String mDescription;
@@ -53,6 +53,7 @@ public class Location extends ArrayList <Parcelable> implements Parcelable {
     }
 
     protected Location(Parcel in) {
+        locations = new ArrayList<Location>();
         mName = in.readString();
         mDescription = in.readString();
         mWebsite = in.readString();
@@ -81,6 +82,7 @@ public class Location extends ArrayList <Parcelable> implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.readList(locations,null);
         dest.writeString(mName);
         dest.writeString(mDescription);
         dest.writeString(mWebsite);
