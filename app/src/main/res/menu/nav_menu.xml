@@ -6,11 +6,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_intro"
-            android:icon="@drawable/seightseeing"
+            android:icon="@drawable/home"
             android:title="@string/home" />
         <item
             android:id="@+id/nav_seightseeing"
-            android:icon="@drawable/seightseeing"
+            android:icon="@drawable/museums_arts"
             android:title="@string/museums_kust" />
         <item
             android:id="@+id/nav_seightseeing1"
@@ -19,11 +19,11 @@
 
         <item
             android:id="@+id/nav_seightseeing2"
-            android:icon="@drawable/seightseeing"
+            android:icon="@drawable/food_n_drinks"
             android:title="@string/food_drinks" />
         <item
             android:id="@+id/nav_seightseeing3"
-            android:icon="@drawable/seightseeing"
+            android:icon="@drawable/berlinale"
             android:title="@string/berlinale" />
     </group>
 
@@ -31,15 +31,15 @@
         <menu>
             <item
                 android:id="@+id/calendar"
-                android:icon="@drawable/seightseeing"
+                android:icon="@drawable/calendar"
                 android:title="Save to calendar"/>
             <item
                 android:id="@+id/maps"
-                android:icon="@drawable/seightseeing"
+                android:icon="@drawable/map"
                 android:title="Open directions"/>
             <item
                 android:id="@+id/share"
-                android:icon="@drawable/seightseeing"
+                android:icon="@drawable/share"
                 android:title="Share"/>
         </menu>
     </item>
