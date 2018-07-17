@@ -15,37 +15,31 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 public class BerlinaleFragment extends Fragment {
-    private ArrayList<Location> mLocation;
-    private LocationAdapter.OnItemClickListener mListener;
+    private ArrayList <Location> mLocation;
 
     private RecyclerView mRecyclerView;
     private LocationAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    public BerlinaleFragment(){
+    public BerlinaleFragment() {
         // required emtpy constructor
-    }
-
-    public void setOnItemClickListener(LocationAdapter.OnItemClickListener listener){
-        mListener = listener;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.rb_recyclerview,container,false);
+        View rootView = inflater.inflate(R.layout.rb_recyclerview, container, false);
 
-
-        final ArrayList<Location> locations = new ArrayList <Location>();
+        final ArrayList <Location> locations = new ArrayList <Location>();
         locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
 
         mLocation = locations;
 
@@ -63,23 +57,18 @@ public class BerlinaleFragment extends Fragment {
                 Fragment LFragment = new MuseumArtFragment();
                 Bundle data = new Bundle();
                 data.putParcelableArrayList("array", mLocation);
-                Log.i("Bundle ", "passes"); // works
                 LFragment.setArguments(data);
 
                 Intent intent = new Intent(getActivity(), DetailCard.class);
-                if (getActivity().getIntent() != null){
+                if (getActivity().getIntent() != null) {
                     intent.putExtra("position", position);
                     Location location = mLocation.get(position);
                     intent.putExtra("location", location);
-                    //intent.putParcelableArrayListExtra("location", mLocation.get(position));
-                    Log.i("Berlinale position is ", "No: " + position);
                 }
                 startActivity(intent);
             }
         });
-
         return rootView;
-
     }
-    }
+}
 

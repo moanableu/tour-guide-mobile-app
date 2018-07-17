@@ -15,9 +15,9 @@
         android:id="@+id/category_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="@dimen/d56dp"
         android:background="?android:attr/selectableItemBackground"
-        android:paddingLeft="16dp">
+        android:paddingLeft="@dimen/d16dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -56,8 +56,9 @@
 
             <ImageView
                 android:id="@+id/tour_image"
-                android:layout_width="144dp"
-                android:layout_height="144dp"
+                android:layout_width="@dimen/d144dp"
+                android:scaleType="centerCrop"
+                android:layout_height="@dimen/d144dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
                 android:padding="@dimen/d2dp"

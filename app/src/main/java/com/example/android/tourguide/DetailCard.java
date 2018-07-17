@@ -18,13 +18,7 @@ public class DetailCard extends AppCompatActivity {
     private TextView detailTitle, detailDescription, dHours, fees;
     private ArrayList <Location> mLocation;
 
-
     private RecyclerView.LayoutManager mLayoutManager;
-    private LocationAdapter.OnItemClickListener mListener;
-
-    public void setOnItemClickListener(LocationAdapter.OnItemClickListener listener) {
-        mListener = listener;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +26,6 @@ public class DetailCard extends AppCompatActivity {
         setContentView(R.layout.activity_detail_card);
 
         mLocation = new ArrayList <Location>();
-        //ArrayList<Location> mLocation = new ArrayList <>();
-        //new ArrayList<Location>();
 
         LocationAdapter adapter = new LocationAdapter(this.mLocation);
         RecyclerView rv = findViewById(R.id.recyclerView);
@@ -42,13 +34,13 @@ public class DetailCard extends AppCompatActivity {
         rv.setAdapter(adapter);
 
         Intent tIntent = getIntent();
-
         Location location = tIntent.getParcelableExtra("location");
 
         int image = location.getImage();
         String name = location.getName();
         String hours = location.getSchedule();
         String description = location.getDescription();
+        String entryfee = location.getEntryFee();
 
         //create widgets
         detailImage = findViewById(R.id.detail_image);
@@ -62,5 +54,8 @@ public class DetailCard extends AppCompatActivity {
 
         detailDescription = findViewById(R.id.detail_description);
         detailDescription.setText(description);
+
+        fees = findViewById(R.id.fees);
+        fees.setText(entryfee);
     }
 }
