@@ -5,4 +5,15 @@
     <dimen name="d4dp">4dp</dimen>
     <dimen name="d8dp">8dp</dimen>
     <dimen name="d0dp">0dp</dimen>
+    <dimen name="d56dp">56dp</dimen>
+    <dimen name="d16dp">16dp</dimen>
+    <dimen name="d10dp">10dp</dimen>
+    <dimen name="d86dp">86dp</dimen>
+    <dimen name="d297dp">297dp</dimen>
+    <dimen name="d110dp">110dp</dimen>
+    <dimen name="d154dp">154dp</dimen>
+    <dimen name="d27dp">27dp</dimen>
+    <dimen name="d174dp">174dp</dimen>
+    <dimen name="d309dp">309dp</dimen>
+    <dimen name="d144dp">144dp</dimen>
 </resources>

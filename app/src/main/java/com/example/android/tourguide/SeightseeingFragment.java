@@ -16,41 +16,33 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class SeightseeingFragment extends Fragment {
-    private ArrayList<Location> mLocation;
-    private LocationAdapter.OnItemClickListener mListener;
+    private ArrayList <Location> mLocation;
 
     private RecyclerView mRecyclerView;
-    private LocationAdapter mAdapter; // limits displayed data  for improved performance
-    private RecyclerView.LayoutManager mLayoutManager; //aligns items
+    private LocationAdapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
-    public SeightseeingFragment(){
+    public SeightseeingFragment() {
         // required emtpy constructor
-    }
-
-    public void setOnItemClickListener(LocationAdapter.OnItemClickListener listener){
-        mListener = listener;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.rb_recyclerview,container,false);
+        View rootView = inflater.inflate(R.layout.rb_recyclerview, container, false);
 
-
-        final ArrayList<Location> locations = new ArrayList <Location>();
+        final ArrayList <Location> locations = new ArrayList <Location>();
         locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing,R.string.seightseeing, R.string.seigtseeing_intro));
-
+        locations.add(new Location(R.drawable.seightseeing, "MuseumsinseA", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "MuseumsinseB", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "MuseumsinseC", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.seightseeing, R.string.seightseeing, R.string.seigtseeing_intro));
+        locations.add(new Location(R.drawable.seightseeing, R.string.seightseeing, R.string.seigtseeing_intro));
+        locations.add(new Location(R.drawable.seightseeing, R.string.seightseeing, R.string.seigtseeing_intro));
+        locations.add(new Location(R.drawable.seightseeing, R.string.seightseeing, R.string.seigtseeing_intro));
+        locations.add(new Location(R.drawable.seightseeing, R.string.seightseeing, R.string.seigtseeing_intro));
+//adding resources as strings gradually
         mLocation = locations;
-
-        // add onItemClickListener
 
         mRecyclerView = rootView.findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(getActivity());
@@ -66,22 +58,17 @@ public class SeightseeingFragment extends Fragment {
                 Fragment LFragment = new MuseumArtFragment();
                 Bundle data = new Bundle();
                 data.putParcelableArrayList("array", mLocation);
-                Log.i("Bundle ", "passes"); // works
                 LFragment.setArguments(data);
 
                 Intent intent = new Intent(getActivity(), DetailCard.class);
-                if (getActivity().getIntent() != null){
+                if (getActivity().getIntent() != null) {
                     intent.putExtra("position", position);
                     Location location = mLocation.get(position);
                     intent.putExtra("location", location);
-                    //intent.putParcelableArrayListExtra("location", mLocation.get(position));
-                    Log.i("Seightseeing position ", "No: " + position);
                 }
                 startActivity(intent);
             }
         });
-
         return rootView;
-
     }
 }

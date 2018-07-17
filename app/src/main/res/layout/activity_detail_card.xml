@@ -5,14 +5,14 @@
     android:id="@+id/card_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="16dp"
-    android:layout_marginTop="16dp"
+    android:layout_marginBottom="@dimen/d16dp"
+    android:layout_marginTop="@dimen/d16dp"
     android:foreground="@color/cardview_shadow_end_color"
     app:cardCornerRadius="-1dp"
-    app:cardElevation="10dp"
+    app:cardElevation="@dimen/d10dp"
     app:cardPreventCornerOverlap="true"
-    tools:context=".DetailCard"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DetailCard"
     tools:showIn="@layout/app_bar_main">
 
     <RelativeLayout
@@ -25,14 +25,15 @@
         <ImageView
             android:id="@+id/detail_image"
             android:layout_width="match_parent"
-            android:layout_height="309dp"
+            android:layout_height="@dimen/d309dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:layout_gravity="center"
             android:layout_marginEnd="@dimen/d0dp"
             android:layout_marginTop="@dimen/d0dp"
             android:padding="@dimen/d0dp"
-            android:src="@drawable/seightseeing"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/seightseeing" />
 
         <TextView
             android:id="@+id/detail_name"
@@ -40,25 +41,27 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="174dp"
-            android:layout_marginStart="27dp"
+            android:layout_below="@id/detail_image"
+            android:layout_marginBottom="@dimen/d174dp"
+            android:layout_marginStart="@dimen/d27dp"
             android:gravity="bottom"
             android:paddingBottom="@dimen/d1dp"
             android:paddingRight="@dimen/d2dp"
             android:paddingTop="@dimen/d1dp"
             android:text="@string/fd_bar_1"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="20sp"
+            android:textColor="@color/font"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/website"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@id/hours_bold"
+            android:layout_above="@id/address"
+            android:textColor="@color/font"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/detail_name"
-            android:layout_marginBottom="154dp"
+            android:layout_marginBottom="@dimen/d154dp"
             android:paddingBottom="@dimen/d2dp"
             android:paddingTop="@dimen/d1dp"
             android:text="www.something"
@@ -70,8 +73,9 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/hours_bold"
             android:layout_alignParentBottom="true"
+            android:textColor="@color/font"
             android:layout_alignStart="@+id/detail_name"
-            android:layout_marginBottom="110dp"
+            android:layout_marginBottom="@dimen/d110dp"
             android:maxLines="2"
             android:paddingBottom="@dimen/d2dp"
             android:paddingTop="@dimen/d1dp"
@@ -81,6 +85,7 @@
         <TextView
             android:id="@+id/hours_bold"
             android:layout_width="wrap_content"
+            android:textColor="@color/font"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/detail_name"
             android:layout_alignTop="@+id/hours"
@@ -92,11 +97,12 @@
 
         <TextView
             android:id="@+id/hours"
-            android:layout_width="297dp"
+            android:layout_width="@dimen/d297dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginBottom="86dp"
+            android:textColor="@color/font"
+            android:layout_marginBottom="@dimen/d86dp"
             android:layout_toLeftOf="@id/hours_bold"
             android:paddingBottom="@dimen/d2dp"
             android:paddingTop="@dimen/d1dp"
@@ -110,6 +116,7 @@
             android:layout_above="@+id/detail_description"
             android:layout_alignStart="@+id/detail_name"
             android:paddingBottom="@dimen/d2dp"
+            android:textColor="@color/font"
             android:paddingTop="@dimen/d1dp"
             android:text="@string/mk_1_fee"
             android:textSize="12sp" />
@@ -122,7 +129,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignStart="@id/detail_name"
             android:ellipsize="end"
-            android:maxLines="5"
+            android:maxLines="3"
             android:paddingBottom="@dimen/d1dp"
             android:paddingTop="@dimen/d2dp"
             android:text="@string/berlinale_intro"
@@ -134,10 +141,10 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/d4dp"
-        android:scrollbars="vertical"
-        android:background="@android:color/transparent"
         android:layout_marginBottom="@dimen/d4dp"
-        android:layout_marginTop="56dp"/>
+        android:layout_marginTop="@dimen/d56dp"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/d4dp"
+        android:scrollbars="vertical" />
 
 </android.support.v7.widget.CardView>

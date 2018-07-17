@@ -17,39 +17,31 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 public class MuseumArtFragment extends Fragment {
-    private ArrayList<Location> mLocation;
-    private LocationAdapter.OnItemClickListener mListener;
-    private Context mContext;
-    private static final String LOCATION = "location";
+    private ArrayList <Location> mLocation;
 
     private RecyclerView mRecyclerView;
-    private LocationAdapter mAdapter; // limits displayed data  for improved performance
-    private RecyclerView.LayoutManager mLayoutManager; //aligns items
+    private LocationAdapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
-    public MuseumArtFragment(){
+    public MuseumArtFragment() {
         // required emtpy constructor
-    }
-
-
-    public void setOnItemClickListener(LocationAdapter.OnItemClickListener listener){
-        mListener = listener;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.rb_recyclerview,container,false);
+        View rootView = inflater.inflate(R.layout.rb_recyclerview, container, false);
 
-        final ArrayList<Location> locations = new ArrayList <Location>();
+        final ArrayList <Location> locations = new ArrayList <Location>();
         locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing, "Museumsinse3", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel4", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel5", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel4", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel5", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing, "Museumsinse6", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel7", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing,"Museumsinsel8", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin",  "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel7", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel8", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
 
         mLocation = locations;
 
@@ -61,28 +53,23 @@ public class MuseumArtFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
-
         mAdapter.setOnItemClickListener(new LocationAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 Fragment LFragment = new MuseumArtFragment();
                 Bundle data = new Bundle();
                 data.putParcelableArrayList("array", mLocation);
-                Log.i("Bundle ", "passes"); // works
                 LFragment.setArguments(data);
 
                 Intent intent = new Intent(getActivity(), DetailCard.class);
-                if (getActivity().getIntent() != null){
+                if (getActivity().getIntent() != null) {
                     intent.putExtra("position", position);
                     Location location = mLocation.get(position);
                     intent.putExtra("location", location);
-                    //intent.putParcelableArrayListExtra("location", mLocation.get(position));
-                    Log.i("Museum2 position is ", "No: " + position); // works
                 }
                 startActivity(intent);
             }
         });
-
         return rootView;
     }
 }
