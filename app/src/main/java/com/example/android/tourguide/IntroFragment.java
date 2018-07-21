@@ -27,10 +27,10 @@ public class IntroFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.tour_list,container,false);
 
         final ArrayList<Tour> tours = new ArrayList <Tour>();
-        tours.add(new Tour(R.drawable.seightseeing, (R.string.museums_kust), (R.string.kunst_intro)));
-        tours.add(new Tour(R.drawable.seightseeing, (R.string.seightseeing), (R.string.seigtseeing_intro)));
-        tours.add(new Tour(R.drawable.seightseeing, (R.string.food_drinks), (R.string.food_intro)));
-        tours.add(new Tour(R.drawable.seightseeing, (R.string.berlinale),(R.string.berlinale_intro)));
+        tours.add(new Tour(R.drawable.bikini_berlin_mademoiselle_maurice_, (R.string.museums_kust), (R.string.kunst_intro)));
+        tours.add(new Tour(R.drawable.sanssouci_, (R.string.seightseeing), (R.string.seigtseeing_intro)));
+        tours.add(new Tour(R.drawable.vox_, (R.string.food_drinks), (R.string.food_intro)));
+        tours.add(new Tour(R.drawable.kino_arsenal_, (R.string.berlinale),(R.string.berlinale_intro)));
 
         adapter = new TourAdapter(getActivity(),tours);
         ListView lv = rootView.findViewById(R.id.intro_list);

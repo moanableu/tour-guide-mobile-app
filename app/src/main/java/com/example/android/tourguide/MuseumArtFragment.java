@@ -33,7 +33,7 @@ public class MuseumArtFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.rb_recyclerview, container, false);
 
         final ArrayList <Location> locations = new ArrayList <Location>();
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.bikini_berlin_mademoiselle_maurice, "Bikini Berlin", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing, "Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing, "Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
         locations.add(new Location(R.drawable.seightseeing, "Museumsinse3", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
