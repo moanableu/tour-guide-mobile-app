@@ -23,5 +23,14 @@
         <item name="android:textColor">@color/font</item>
     </style>
 
+    <style name="txt_cardview">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textColor">@color/font</item>
+        <item name="android:layout_alignStart">@+id/detail_name</item>
+        <item name="android:paddingBottom">@dimen/d2dp</item>
+        <item name="android:paddingRight">@dimen/d2dp</item>
+        <item name="android:paddingTop">@dimen/d2dp</item>
+    </style>
+
 
 </resources>

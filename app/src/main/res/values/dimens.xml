@@ -16,4 +16,6 @@
     <dimen name="d174dp">174dp</dimen>
     <dimen name="d309dp">309dp</dimen>
     <dimen name="d144dp">144dp</dimen>
+    <dimen name="d12sp">12sp</dimen>
+    <dimen name="d15sp">15sp</dimen>
 </resources>
