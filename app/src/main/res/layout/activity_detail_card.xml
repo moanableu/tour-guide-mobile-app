@@ -25,7 +25,7 @@
         <ImageView
             android:id="@+id/detail_image"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/d309dp"
+            android:layout_height="300dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:layout_gravity="center"
@@ -35,58 +35,59 @@
             android:scaleType="centerCrop"
             tools:src="@drawable/seightseeing" />
 
+        <RelativeLayout android:layout_height="wrap_content"
+            android:layout_below="@id/detail_image"
+            android:layout_width="wrap_content">
         <TextView
             android:id="@+id/detail_name"
             style="@style/txt_cardview"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@id/detail_image"
-            android:layout_marginBottom="@dimen/d174dp"
             android:layout_marginStart="@dimen/d27dp"
-            android:gravity="bottom"
+            android:gravity="top"
             android:text="@string/fd_bar_1"
             android:textColor="@color/font"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/fees"
-            style="@style/txt_cardview"
-            android:layout_width="297dp"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/website"
-            android:text="@string/mk_1_fee"
-            android:textSize="@dimen/d12sp" />
-
-        <TextView
             android:id="@+id/website"
             style="@style/txt_cardview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/website"
-            android:layout_marginBottom="@dimen/d154dp"
+            android:layout_below="@id/detail_name"
             android:text="www.something"
             android:textSize="12sp" />
 
         <TextView
             android:id="@+id/address"
             style="@style/txt_cardview"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/hours_bold"
-            android:layout_marginBottom="@dimen/d110dp"
+            android:layout_below="@id/website"
             android:maxLines="2"
             android:text="@string/fd_bar_1_address"
             android:textSize="@dimen/d12sp" />
+
+            <TextView
+                android:id="@+id/fees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/address"
+                android:layout_alignStart="@+id/detail_name"
+                android:paddingBottom="@dimen/d2dp"
+                android:textColor="@color/font"
+                android:paddingTop="@dimen/d1dp"
+                android:text="@string/mk_1_fee"
+                android:textSize="12sp" />
 
         <TextView
             android:id="@+id/hours_bold"
             style="@style/txt_cardview"
             android:layout_width="wrap_content"
+            android:layout_below="@id/fees"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/detail_name"
-            android:layout_alignTop="@+id/hours"
             android:text="@string/hours"
             android:textSize="@dimen/d12sp"
             android:textStyle="bold" />
@@ -95,11 +96,10 @@
             android:id="@+id/hours"
             android:layout_width="327dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:textColor="@color/font"
-            android:layout_marginBottom="@dimen/d86dp"
             android:layout_toLeftOf="@id/hours_bold"
+            android:layout_below="@id/fees"
             android:paddingBottom="@dimen/d2dp"
             android:paddingTop="@dimen/d2dp"
             android:text="@string/fd_bar_1_hours"
@@ -108,12 +108,14 @@
         <TextView
             android:id="@+id/detail_description"
             style="@style/txt_cardview"
+            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="82dp"
+            android:layout_height="162dp"
             android:ellipsize="end"
             android:maxLines="4"
             android:text="@string/berlinale_intro"
             android:textSize="@dimen/d15sp" />
+        </RelativeLayout>
 
     </RelativeLayout>
 
