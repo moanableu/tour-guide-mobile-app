@@ -9,18 +9,98 @@
     <string name="dummytext">Lorem ipsum dolor amet cliche vinyl listicle, disrupt blue bottle poutine activated charcoal shoreditch. Wayfarers quinoa brunch pabst. Cliche leggings gluten-free before they sold out, pop-up echo park lyft. Quinoa iceland beard vexillologist chicharrones 3 wolf moon, sartorial enamel pin trust fund.</string>
     <string name="dummytextone">Fashion axe beard edison bulb snackwave wayfarers, 90\'s yuccie farm-to-table leggings lo-fi chillwave polaroid flexitarian tbh hoodie. Tacos franzen DIY hoodie umami. Keytar PBRnB shoreditch aesthetic microdosing. Pug activated charcoal kale chips chartreuse humblebrag vegan yuccie banh mi locavore irony tofu forage next level brunch selfies. Chicharrones godard pabst pop-up iceland. Hella enamel pin tbh, plaid blue bottle normcore snackwave taxidermy heirloom jianbing activated charcoal slow-carb jean shorts messenger bag cliche. Franzen hammock organic hot chicken gluten-free jean shorts chambray vexillologist fam sustainable bitters selfies etsy.</string>
     <string name="dummytexttwo">Listicle fingerstache chambray hoodie helvetica. Heirloom twee man braid unicorn, raw denim put a bird on it try-hard scenester. YOLO live-edge meh, +1 gentrify keffiyeh tousled small batch. Schlitz pug chicharrones kitsch venmo small batch pabst drinking vinegar lo-fi taxidermy cliche vice ugh aesthetic swag. Unicorn meggings cliche, drinking vinegar blog knausgaard keffiyeh poutine bespoke messenger bag celiac prism locavore migas.</string>
+
+    <!--fragments-->
     <string name="berlinale">Berlinale</string>
     <string name="museums_kust"><![CDATA[Museums & Kust]]></string>
     <string name="food_drinks"><![CDATA[Food & Drinks]]></string>
     <string name="seigtseeing_intro">Hammock pour-over \nchambray normcore YOLO vinyl.</string>
+    <!--intro activity-->
     <string name="kunst_intro">Distillery butcher portland celiac  cray.</string>
     <string name="food_intro">Banjo polaroid selvage pitchfork \nasymmetrical, tumblr heirloom \npour-over raw denim.</string>
     <string name="berlinale_intro">Quinoa fixie subway tile man bun \nskateboard dreamcatcher.</string>
     <string name="home">Home</string>
-
-    <string name="fd_bar_1">Monkey Bar</string>
-    <string name="fd_bar_1_hours">Mo-Su 12pm -2am</string>
-    <string name="fd_bar_1_address">Budapester Straße 40 \n10. Stock 10787 Berlin</string>
     <string name="hours">Hours:</string>
-    <string name="mk_1_fee"><![CDATA[3-day pass &euro;\29.00]]></string>
+
+    <string name="mk_1_fee"><![CDATA[3-day pass \€29.00]]></string>
+
+    <!-- bars-->
+    <string name="fd_bar_1">Monkey Bar</string>
+    <string name="fd_bar_1_url">monkeybarberlin.de</string>
+    <string name="fd_bar_1_2_hours">Mo-Su 12pm-2am</string>
+    <string name="fd_bar_1_address">Budapester Straße 40 \n10. Stock 10787 Berlin</string>
+
+   <!-- bar 1 and 2 have same schedule-->
+    <string name="fd_bar_2">Klunkerkranich</string>
+    <string name="fd_bar_2_url">facebook.com/kulturdachgartenklunkerkranich</string>
+    <string name="fd_bar_2_address">Weserstraße 207 \n12047 Berlin</string>
+
+    <string name="fd_bar_3">Alt Berlin</string>
+    <string name="fd_bar_3_url">altberlin-ballhaus.de/en</string>
+    <string name="fd_bar_3_hours">6pm-end | Sunny days 3pm-end</string>
+    <string name="fd_bar_3_address">Chaußeestraße 102 \n10115 Berlin</string>
+
+    <string name="fd_bar_4">Goldesel</string>
+    <string name="fd_bar_4_url">goldesel-berlin.de</string>
+    <string name="fd_bar_4_hours">Mo-Sa 5pm-end</string>
+    <string name="fd_bar_4_address">Seelingstraße 7 \n14059 Berlin</string>
+
+    <!--breweries-->
+    <string name="fd_brew_1">brlo</string>
+    <string name="fd_brew_1_url">brlo-brwhouse.de/en/brauerei</string>
+    <string name="fd_brew_1_hours">Sa 2pm-5:30pm</string>
+    <string name="fd_brew_1_try">Redlight Ale</string>
+    <string name="fd_brew_1_address">Schoenberger Straße 16 \n10963 Berlin</string>
+
+    <string name="fd_brew_2">Stone Brewing</string>
+    <string name="fd_brew_2_url">stonebrewing.eu</string>
+    <string name="fd_brew_2_hours">Mo-Sa noon-midnight | Su 10am-10pm</string>
+    <string name="fd_brew_2_try">Arrogant Bastard</string>
+    <string name="fd_brew_2_address">Marienpark 23 \n12107 Berlin</string>
+
+    <string name="fd_brew_3">Eschenbräu</string>
+    <string name="fd_brew_3_url">eschenbraeu.de</string>
+    <string name="fd_brew_3_hours">3pm-end</string>
+    <string name="fd_brew_3_try">Pilsener</string>
+    <string name="fd_brew_3_address">Triftstraße 67 \n13353 Berlin </string>
+
+    <string name="fd_brew_4">Lemke</string>
+    <string name="fd_brew_4_url">lemke.berlin/home/device.desktop/lang.en/</string>
+    <string name="fd_brew_4_hours">noon - midnight</string>
+    <string name="fd_brew_4_try">Bohemian Pilsener</string>
+    <string name="fd_brew_4_address">Dircksenstraße, S-Bahnbogen 143 \n10178 Berlin-Mitte</string>
+
+    <string name="fd_brew_5">Brauhaus Georgbraeu</string>
+    <string name="fd_brew_5_url">brauhaus-georgbraeu.de</string>
+    <string name="fd_brew_5_hours">noon-11pm</string>
+    <string name="fd_brew_5_try">Georg-Braeu Dunkel</string>
+    <string name="fd_brew_5_address">Spreeufer 4 \n10178 Berlin</string>
+
+    <string name="fd_brew_6">Vagabund Brauerei</string>
+    <string name="fd_brew_6_url">vagabundbrauerei.com</string>
+    <string name="fd_brew_6_hours">Mo-Fr 5pm-end | Sa-Su 1pm-end </string>
+    <string name="fd_brew_6_try">Tripel IPA</string>
+    <string name="fd_brew_6_address">Antwerpener Str. 3 \n13353 Berlin</string>
+
+    <!--restaurants-->
+    <string name="fd_restos_1">Le Faubourg</string>
+    <string name="fd_restos_1_url">lefaubourg.berlin/de/</string>
+    <string name="fd_restos_1_hours">12pm-11pm</string>
+    <string name="fd_restos_1_address">Augsburger Straße 41 \n10789 Berlin 030</string>
+
+    <string name="fd_restos_2">Neumond Restaurant</string>
+    <string name="fd_restos_2_url">neumond-restaurant.de/</string>
+    <string name="fd_restos_2_hours">11am-10pm</string>
+    <string name="fd_restos_2_address">Borsigstraße 28 \n10115 Berlin</string>
+
+    <string name="fd_restos_3">VOX</string>
+    <string name="fd_restos_3_url">vox-restaurant.de/</string>
+    <string name="fd_restos_3_hours">6:30pm-11pm</string>
+    <string name="fd_restos_3_address">Marlene-Dietrich-Platz 2 \n10785 Berlin</string>
+
+    <string name="fd_restos_4">Patio</string>
+    <string name="fd_restos_4_url">patio-berlin.de/</string>
+    <string name="fd_restos_4_hours">Mo-Sa 12:30pm-11pm, Su 3pm-11pm</string>
+    <string name="fd_restos__address">10557 Helgoländer Ufer \nKirchstraße Berlin</string>
+
 </resources>
