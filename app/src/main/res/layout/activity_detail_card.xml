@@ -102,7 +102,7 @@
             android:layout_below="@id/fees"
             android:paddingBottom="@dimen/d2dp"
             android:paddingTop="@dimen/d2dp"
-            android:text="@string/fd_bar_1_hours"
+            android:text="@string/fd_bar_1_2_hours"
             android:textSize="12sp"  />
 
         <TextView
