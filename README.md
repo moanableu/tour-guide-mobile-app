@@ -1,2 +1,2 @@
 # tour_app
-![preview](/images/mvp.jpeg)
+![preview](/images/mvp.jpg)
