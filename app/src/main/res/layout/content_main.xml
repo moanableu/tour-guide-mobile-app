@@ -5,7 +5,8 @@
     android:id="@+id/content_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="@dimen/d8dp"
+    android:layout_marginBottom="@dimen/d4dp"
+    android:paddingTop="16dp"
     android:layout_marginTop="?attr/actionBarSize"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -15,7 +16,6 @@
         android:id="@+id/category_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/d56dp"
         android:background="?android:attr/selectableItemBackground"
         android:paddingLeft="@dimen/d16dp">
 
@@ -31,11 +31,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginBottom="@dimen/d2dp"
                 android:layout_marginStart="@dimen/d4dp"
-                android:layout_marginTop="@dimen/d4dp"
+                android:layout_marginTop="@dimen/d2dp"
                 android:gravity="bottom"
-                android:paddingBottom="@dimen/d1dp"
-                android:paddingRight="@dimen/d2dp"
-                android:paddingTop="@dimen/d4dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:text="@string/museums_kust" />
@@ -46,11 +43,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tour_name"
-                android:layout_marginTop="-2dp"
                 android:gravity="top"
                 android:maxLines="3"
-                android:paddingBottom="@dimen/d2dp"
-                android:paddingTop="@dimen/d1dp"
+                android:paddingTop="@dimen/d2dp"
                 android:textSize="15sp"
                 tools:text="@string/kunst_intro" />
 
@@ -58,10 +53,10 @@
                 android:id="@+id/tour_image"
                 android:layout_width="@dimen/d144dp"
                 android:scaleType="centerCrop"
-                android:layout_height="@dimen/d144dp"
+                android:layout_height="160dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                android:padding="@dimen/d2dp"
+                android:padding="@dimen/d0dp"
                 android:src="@drawable/seightseeing" />
         </RelativeLayout>
 
