@@ -9,18 +9,199 @@
     <string name="dummytext">Lorem ipsum dolor amet cliche vinyl listicle, disrupt blue bottle poutine activated charcoal shoreditch. Wayfarers quinoa brunch pabst. Cliche leggings gluten-free before they sold out, pop-up echo park lyft. Quinoa iceland beard vexillologist chicharrones 3 wolf moon, sartorial enamel pin trust fund.</string>
     <string name="dummytextone">Fashion axe beard edison bulb snackwave wayfarers, 90\'s yuccie farm-to-table leggings lo-fi chillwave polaroid flexitarian tbh hoodie. Tacos franzen DIY hoodie umami. Keytar PBRnB shoreditch aesthetic microdosing. Pug activated charcoal kale chips chartreuse humblebrag vegan yuccie banh mi locavore irony tofu forage next level brunch selfies. Chicharrones godard pabst pop-up iceland. Hella enamel pin tbh, plaid blue bottle normcore snackwave taxidermy heirloom jianbing activated charcoal slow-carb jean shorts messenger bag cliche. Franzen hammock organic hot chicken gluten-free jean shorts chambray vexillologist fam sustainable bitters selfies etsy.</string>
     <string name="dummytexttwo">Listicle fingerstache chambray hoodie helvetica. Heirloom twee man braid unicorn, raw denim put a bird on it try-hard scenester. YOLO live-edge meh, +1 gentrify keffiyeh tousled small batch. Schlitz pug chicharrones kitsch venmo small batch pabst drinking vinegar lo-fi taxidermy cliche vice ugh aesthetic swag. Unicorn meggings cliche, drinking vinegar blog knausgaard keffiyeh poutine bespoke messenger bag celiac prism locavore migas.</string>
+
+    <!--fragments-->
     <string name="berlinale">Berlinale</string>
     <string name="museums_kust"><![CDATA[Museums & Kust]]></string>
     <string name="food_drinks"><![CDATA[Food & Drinks]]></string>
     <string name="seigtseeing_intro">Hammock pour-over \nchambray normcore YOLO vinyl.</string>
+    <!--intro activity-->
     <string name="kunst_intro">Distillery butcher portland celiac  cray.</string>
     <string name="food_intro">Banjo polaroid selvage pitchfork \nasymmetrical, tumblr heirloom \npour-over raw denim.</string>
     <string name="berlinale_intro">Quinoa fixie subway tile man bun \nskateboard dreamcatcher.</string>
     <string name="home">Home</string>
-
-    <string name="fd_bar_1">Monkey Bar</string>
-    <string name="fd_bar_1_hours">Mo-Su 12pm -2am</string>
-    <string name="fd_bar_1_address">Budapester Straße 40 \n10. Stock 10787 Berlin</string>
     <string name="hours">Hours:</string>
-    <string name="mk_1_fee"><![CDATA[3-day pass &euro;\29.00]]></string>
+
+    <string name="mk_1_fee"><![CDATA[3-day pass \€29.00]]></string>
+
+    <!-- bars-->
+    <string name="fd_bar_1">Monkey Bar</string>
+    <string name="fd_bar_1_url">monkeybarberlin.de</string>
+    <string name="fd_bar_1_2_hours">Mo-Su 12pm-2am</string>
+    <string name="fd_bar_1_address">Budapester Straße 40 \n10. Stock 10787 Berlin</string>
+
+   <!-- bar 1 and 2 have same schedule-->
+    <string name="fd_bar_2">Klunkerkranich</string>
+    <string name="fd_bar_2_url">facebook.com/kulturdachgartenklunkerkranich</string>
+    <string name="fd_bar_2_address">Weserstraße 207 \n12047 Berlin</string>
+
+    <string name="fd_bar_3">Alt Berlin</string>
+    <string name="fd_bar_3_url">altberlin-ballhaus.de/en</string>
+    <string name="fd_bar_3_hours">6pm-end | Sunny days 3pm-end</string>
+    <string name="fd_bar_3_address">Chaußeestraße 102 \n10115 Berlin</string>
+
+    <string name="fd_bar_4">Goldesel</string>
+    <string name="fd_bar_4_url">goldesel-berlin.de</string>
+    <string name="fd_bar_4_hours">Mo-Sa 5pm-end</string>
+    <string name="fd_bar_4_address">Seelingstraße 7 \n14059 Berlin</string>
+
+    <!--breweries-->
+    <string name="fd_brew_1">brlo</string>
+    <string name="fd_brew_1_url">brlo-brwhouse.de/en/brauerei</string>
+    <string name="fd_brew_1_hours">Sa 2pm-5:30pm</string>
+    <string name="fd_brew_1_try">Redlight Ale</string>
+    <string name="fd_brew_1_address">Schoenberger Straße 16 \n10963 Berlin</string>
+
+    <string name="fd_brew_2">Stone Brewing</string>
+    <string name="fd_brew_2_url">stonebrewing.eu</string>
+    <string name="fd_brew_2_hours">Mo-Sa noon-midnight | Su 10am-10pm</string>
+    <string name="fd_brew_2_try">Arrogant Bastard</string>
+    <string name="fd_brew_2_address">Marienpark 23 \n12107 Berlin</string>
+
+    <string name="fd_brew_3">Eschenbräu</string>
+    <string name="fd_brew_3_url">eschenbraeu.de</string>
+    <string name="fd_brew_3_hours">3pm-end</string>
+    <string name="fd_brew_3_try">Pilsener</string>
+    <string name="fd_brew_3_address">Triftstraße 67 \n13353 Berlin </string>
+
+    <string name="fd_brew_4">Lemke</string>
+    <string name="fd_brew_4_url">lemke.berlin/home/device.desktop/lang.en/</string>
+    <string name="fd_brew_4_hours">noon - midnight</string>
+    <string name="fd_brew_4_try">Bohemian Pilsener</string>
+    <string name="fd_brew_4_address">Dircksenstraße, S-Bahnbogen 143 \n10178 Berlin-Mitte</string>
+
+    <string name="fd_brew_5">Brauhaus Georgbraeu</string>
+    <string name="fd_brew_5_url">brauhaus-georgbraeu.de</string>
+    <string name="fd_brew_5_hours">noon-11pm</string>
+    <string name="fd_brew_5_try">Georg-Braeu Dunkel</string>
+    <string name="fd_brew_5_address">Spreeufer 4 \n10178 Berlin</string>
+
+    <string name="fd_brew_6">Vagabund Brauerei</string>
+    <string name="fd_brew_6_url">vagabundbrauerei.com</string>
+    <string name="fd_brew_6_hours">Mo-Fr 5pm-end | Sa-Su 1pm-end </string>
+    <string name="fd_brew_6_try">Tripel IPA</string>
+    <string name="fd_brew_6_address">Antwerpener Str. 3 \n13353 Berlin</string>
+
+    <!--restaurants-->
+    <string name="fd_restos_1">Le Faubourg</string>
+    <string name="fd_restos_1_url">lefaubourg.berlin/de/</string>
+    <string name="fd_restos_1_hours">12pm-11pm</string>
+    <string name="fd_restos_1_address">Augsburger Straße 41 \n10789 Berlin 030</string>
+
+    <string name="fd_restos_2">Neumond Restaurant</string>
+    <string name="fd_restos_2_url">neumond-restaurant.de/</string>
+    <string name="fd_restos_2_hours">11am-10pm</string>
+    <string name="fd_restos_2_address">Borsigstraße 28 \n10115 Berlin</string>
+
+    <string name="fd_restos_3">VOX</string>
+    <string name="fd_restos_3_url">vox-restaurant.de/</string>
+    <string name="fd_restos_3_hours">6:30pm-11pm</string>
+    <string name="fd_restos_3_address">Marlene-Dietrich-Platz 2 \n10785 Berlin</string>
+
+    <string name="fd_restos_4">Patio</string>
+    <string name="fd_restos_4_url">patio-berlin.de/</string>
+    <string name="fd_restos_4_hours">Mo-Sa 12:30pm-11pm, Su 3pm-11pm</string>
+    <string name="fd_restos__address">10557 Helgoländer Ufer \nKirchstraße Berlin</string>
+
+   <!-- museums & kunst-->
+    <string name="kunst_1">Museumsinsel</string>
+    <string name="kunst_1_desc">One place for all the arts.\nHave your choice between the Altes Museum, to admire to the Berlin goddess; the Pergamon Museum, home of the Babylon doors; Alte Nationalgalerie,
+        to experience Rodin, Manet and many more classics; or the Neues Museum, where to surrender to the beauty of Nefertiti.</string>
+    <string name="kunst_1_hours">10am-6pm</string>
+    <string name="kunst_1_cost">3-day pass \€29.00</string>
+    <string name="kunst_1_url">shop.smb.museum/#/start</string>
+    <string name="kunst_1_address">Breite Street \n13089 Berlin</string>
+
+    <string name="kunst_2">Bikini Berlin</string>
+    <string name="kunst_2_url">bikiniberlin.de/en/exhibitions/</string>
+    <string name="kunst_2_hours">on request</string>
+    <string name="kunst_2_cost">starting at \€9.5</string>
+    <string name="kunst_2_address">Budapester Str. 38-50 \n10787 Berlin</string>
+
+    <!--3 and 4 have same hours | 3, 4, 7 have same cost-->
+    <string name="kunst_3">C/O Berlin</string>
+    <string name="kunst_3_url">co-berlin.org/en/article/exhibitions</string>
+    <string name="kunst_3_4_hours">11am-8pm</string>
+    <string name="kunst_3_4_6_cost">\€10</string>
+    <string name="kunst_3_address">Hardenbergstraße 22–24 \n10623 Berlin</string>
+
+    <string name="kunst_4">Helmut Newton Foundation</string>
+    <string name="kunst_4_url">helmut-newton.com/exhibitions/</string>
+    <string name="kunst_4_address">Jebensstraße 2 d \n10623 Berlin</string>
+
+    <string name="kunst_5">Museum Barberini: exhibiting masterpieces of Abstract Expressionism</string>
+    <string name="kunst_5_url">museum-barberini.com/en/exhibitions/</string>
+    <string name="kunst_5_hours">10am-7pm</string>
+    <string name="kunst_5_cost">\€14</string>
+    <string name="kunst_5_address">Humboldtstr. 5–6 \n14467 Potsdam</string>
+
+    <!--6 and 7 have same hours-->
+    <string name="kunst_6">KW Berlin</string>
+    <string name="kunst_6_url">kw-berlin.de/en/</string>
+    <string name="kunst_6_7_hours">11am-7pm</string>
+    <string name="kunst_6_address">Auguststraße 69 \n10117 Berlin</string>
+
+    <!--7, 8, 9 have same cost-->
+    <string name="kunst_7">König Galerie</string>
+    <string name="kunst_7_url">koeniggalerie.com/</string>
+    <string name="kunst_7_8_9_cost">free</string>
+    <string name="kunst_7_address">Alexandrinenstr. 118–121 \n10969 Berlin</string>
+
+    <!--8 and 9 have same hours-->
+    <string name="kunst_8">Konrad Fisher Gallerie</string>
+    <string name="kunst_8_url">konradfischergalerie.de/starter/</string>
+    <string name="kunst_8_9_hours">11am-6pm</string>
+    <string name="kunst_8_address">Lindenstraße 35 \n10969 Berlin</string>
+
+    <string name="kunst_9">Galerie Max Hetzler</string>
+    <string name="kunst_9_url">maxhetzler.com/</string>
+    <string name="kunst_9_address">Bleibtreustraße 45 \nD-10623 Berlin-Charlottenburg</string>
+
+    <string name="kunst_10">Schinkel Pavillon e.V.</string>
+    <string name="kunst_10_url">schinkelpavillon.de/</string>
+    <string name="kunst_10_hours">noon-6pm</string>
+    <string name="kunst_10_cost">\€5</string>
+    <string name="kunst_10_address">Oberwallstraße 1 \nBerlin 10117</string>
+
+    <!--attractions-->
+    <string name="attraction_1">Sanssouci</string>
+    <string name="attraction_1_url">urlaubsguru.de/reisemagazin/schloss-sanssouci-potsdam/</string>
+    <string name="attraction_1_desc">Built in the 1740\'s to act as the summer estate of Prussian king Frederick the Great, Sanssouci Palace has managed to maintain its opulence though hundreds of years worth of war and political upheaval.\nMuch smaller than many European royal houses, the palace features just ten main rooms spread out across a single story, not unlike a more grand version of a Roman villa. While the main palace building is comparatively small, the park surrounding the complex is sprawling with gardens, colonnades, fountains and statuary dotting the verdant landscape. There is also a terraced vineyard at the foot of the palace.</string>
+    <string name="attraction_1_hours">11-6pm</string>
+    <string name="attraction_1_cost">free</string>
+    <string name="attraction_1_address">D-10623 Berlin-Charlottenburg Bleibtreustraße 45</string>
+
+    <string name="attraction_2">Weinstraße Nord</string>
+    <string name="attraction_2_url">berlin.de/tourismus/stadtfuehrer-mieten/tour/3942</string>
+    <string name="attraction_2_desc">Since 1173 wine was being produced in Berlin. Albrecht the Bear brought the monks and the monks brought the wine. A biking tour starts just minutes away the iconic site where the Berlin Wall was destroyed on Nov 9, 1989. the tour covers hillside vineyard locations, which back in the 1100s were the outskirts of the city, ancient horse tram? and passing by most recent historical locations like the largest Jewish cemetery. From there to Berlin Weingarten eV where Riesling varieties were cultivated. The first tasting stop is at Proschwitz, a reknown winery, will give us the opportunity to rest while enjoying a taste (cost not covered)\nThe next tasting stop will be at Weinschaugarten, which offers 50 wines typical of Vienna, including Riesling, Chardonnay, Grüner Veltiner.\nContinuing our sightseeing adventure we will visit locations near the Brandenburg Gate, Alexander Platz, Berliner Dom, Schlossplatz and Gendarmenmarkt. The tour ends at the Spandauer Vorstadt to the Weinbergsweg the last active vineyard in the city, which closed doors in 1912.</string>
+
+    <string name="attraction_3">Berlin Fountains</string>
+    <string name="attraction_3_url">berlin.de/tourismus/insidertipps/5336515-2339440-brunnen-in-berlin-top-10.html</string>
+    <string name="attraction_3_desc">Berlin is home to 270 fountains, here we present you a selection of the best ones to visit.At the basin of the Luisenstädtischer canal, the Indian fountain was destroyed during the East/West separation, and restored with the unification. the fountain is surrounded by the Engelbecken  rose garden.Viktoriapark displays the largest artificial cascades in the city. Built in 1891, presumably after Zackelfalls in the Giant Mountains, it bring the pleasure of the mountains to the city. Alexanderplatz is home to the Fountain of People\'s Friendship is a favorite of many during busy Summer days.Enter the Grimm\'s brothers fairy tale space by visiting Märchenbrunnen. Since 1913 Grimm's characters inhabit this fountain -with a brief hiatus between the end of WWII and 1950-.\nThe Neptune Fountain has a classic style and seats in front of the Red Town Hall since 1969. Wilhelm I ordered the piece of art, however the design that Reinhold Begas prepared was not pleasant to the King\'s eyes, construction began only after the king\'s death.\nThe most beautiful fountain is small in size and is located in the Tiergarten, the Troton Fountain can be reached by path of Bellevue Castle and the House of World Cultures.</string>
+
+    <string name="attraction_4">Peacock Island</string>
+    <string name="attraction_4_url">berlin.de/tourismus/insidertipps/1248513-2339440-pfaueninsel-wo-sich-koenigin-luise-gern-.html</string>
+    <string name="attraction_4_desc">One of the jewels of the Enlightenment era, this dreamy space built in 1794 by Frederick William II and whose legacy was built upon by Luise, wife of Friedrich  Wilhem III.the castle \"It was a place of fun for kings to play peasant and peasant\" says Fontaine; there were stables and  large landscaped garden designed to imitate nature, by Peter Joseph Lenné.\nIf you enjoy this location, you should also visit the Gardens of the World in Marzahn</string>
+
+    <!--Berlinale Locations-->
+    <string name="berlinale_1">Arsenal Berlin</string>
+    <string name="berlinale_1_url">arsenal-berlin.de/home.html</string>
+    <string name="berlinale_1_address">Potsdamer Straße 2 \n10785 Berlin</string>
+
+    <string name="berlinale_2">Akademie der Künste</string>
+    <string name="berlinale_2_url">adk.de/</string>
+    <string name="berlinale_2_address">Pariser Platz 4 \n10117 Berlin</string>
+
+    <string name="berlinale_3">Deutsche Kinemathek</string>
+    <string name="berlinale_3_url">deutsche-kinemathek.de/</string>
+    <string name="berlinale_3_address">Potsdamer Straße 2 \n10785 Berlin</string>
+
+    <string name="berlinale_4">Haus der Kulturen der Welt</string>
+    <string name="berlinale_4_url">hkw.de/de/index.php</string>
+    <string name="berlinale_4_address">John-Foster-Dulles-Allee 10 \n10557 Berlin</string>
+
+    <string name="berlinale_5">Berliner Fest Spiele</string>
+    <string name="berlinale_5_url">berlinerfestspiele.de/de</string>
+    <string name="berlinale_5_address">Niederkirchnerstraße 7 \nD-10963 Berlin </string>
+    <string name="berlinale_5_">We-Mo 10am-7pm</string>
 </resources>
