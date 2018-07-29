@@ -31,17 +31,12 @@ public class SeightseeingFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.rb_recyclerview, container, false);
 
+        //int image, int name, int description, int website,int address,  int schedule, int fee
+        // name url, desc all others
+
         final ArrayList <Location> locations = new ArrayList <Location>();
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "MuseumsinseA", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "MuseumsinseB", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "MuseumsinseC", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing, R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing, R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing, R.string.seightseeing, R.string.seigtseeing_intro));
-        locations.add(new Location(R.drawable.seightseeing, R.string.seightseeing, R.string.seigtseeing_intro));
-//adding resources as strings gradually
+        locations.add(new Location(R.drawable.sanssouci, R.string.attraction_1,  R.string.attraction_1_desc, R.string.attraction_1_url, R.string.attraction_1_address, R.string.attraction_1_hours, R.string.attraction_1_cost));
+
         mLocation = locations;
 
         mRecyclerView = rootView.findViewById(R.id.recyclerView);
