@@ -30,16 +30,10 @@ public class BerlinaleFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.rb_recyclerview, container, false);
 
+        //int image, int name, int description, int website, int address, int schedule, int fee
+
         final ArrayList <Location> locations = new ArrayList <Location>();
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel1", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
-        locations.add(new Location(R.drawable.seightseeing, "Museumsinsel2", "One place for all the arts", "shop.smb.museum", "10-6pm", "Berlin", "Free"));
+        locations.add(new Location(R.drawable.bikini_berlin_mademoiselle_maurice, R.string.berlinale_1,  R.string.kunst_1_desc, R.string.berlinale_1_url,  R.string.berlinale_1_address, R.string.kunst_1_hours, R.string.kunst_1_cost));
 
         mLocation = locations;
 

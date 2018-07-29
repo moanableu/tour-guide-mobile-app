@@ -7,59 +7,62 @@ import java.util.ArrayList;
 
 public class Location implements Parcelable {
 
-    private ArrayList<Location> locations;
-    private String mName;
-    private int mName1;
-    private String mDescription;
-    private int mDescription1;
-    private String mWebsite;
-    private String mSchedule;
-    private String mAddress;
-    private int mImage = NO_IMAGE;
-    private String mEntryFee;
-    private static final int NO_IMAGE = -1;
+    private ArrayList <Location> locations;
+    private int mName;
+    private int mWebsite;
+    private int mAddress;
 
-    public Location (int image, int name, int description){
+    private int mImage = NO_IMAGE;
+    private int mSchedule = NO_SCHEDULE;
+    private int mDescription = NO_DESCRIPTION;
+    private int mEntryFee = NO_FEE;
+
+    private static final int NO_IMAGE = -1;
+    private static final int NO_SCHEDULE = -1;
+    private static final int NO_DESCRIPTION = -1;
+    private static final int NO_FEE = -1;
+
+    //int image, int name, int website, int address, int schedule
+    //int image, int name, int website, int address
+    //int image, int name, int description, int website, int address, int schedule, int fee
+
+    public Location(int image, int name, int website, int address, int schedule) {
         mImage = image;
-        mName1 = name;
-        mDescription1 = description;
+        mName = name;
+        mWebsite = website;
+        mAddress = address;
+        mSchedule = schedule;
     }
 
-    public Location (String name, String description, String website, String schedule, String address){
+    public Location(int image, int name, int website, int address) {
+        mImage = image;
         mName = name;
-        mDescription = description;
         mWebsite = website;
-        mSchedule = schedule;
         mAddress = address;
     }
 
-    public Location(String name, String description, String website, String schedule, String address, int image){
-        this.mName = name;
-        this.mDescription = description;
-        this.mWebsite = website;
-        this.mSchedule = schedule;
-        this.mAddress = address;
-        this.mImage = image;
+    public Location(int image, int name, int description, int website, int address, int schedule, int fee) {
+        mImage = image;
+        mName = name;
+        mDescription = description;
+        mWebsite = website;
+        mAddress = address;
+        mSchedule = schedule;
+        mEntryFee = fee;
     }
 
-    public Location(int image, String name, String description, String website, String schedule, String address, String entryFee){
-        this.mImage = image;
-        this.mName = name;
-        this.mDescription = description;
-        this.mWebsite = website;
-        this.mSchedule = schedule;
-        this.mAddress = address;
-        this.mEntryFee = entryFee;
-    }
+    //int image, int name, int description, int website, int address, int schedule, int fee
+
 
     protected Location(Parcel in) {
-        mName = in.readString();
-        mDescription = in.readString();
-        mWebsite = in.readString();
-        mSchedule = in.readString();
-        mAddress = in.readString();
+        locations = in.createTypedArrayList(Location.CREATOR);
+        mName = in.readInt();
+        mWebsite = in.readInt();
+        mAddress = in.readInt();
         mImage = in.readInt();
-        mEntryFee = in.readString();
+        mSchedule = in.readInt();
+        mDescription = in.readInt();
+        mEntryFee = in.readInt();
     }
 
     public static final Creator <Location> CREATOR = new Creator <Location>() {
@@ -75,51 +78,6 @@ public class Location implements Parcelable {
     };
 
     @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.readList(locations,null);
-        dest.writeString(mName);
-        dest.writeString(mDescription);
-        dest.writeString(mWebsite);
-        dest.writeString(mSchedule);
-        dest.writeString(mAddress);
-        dest.writeInt(mImage);
-        dest.writeString(mEntryFee);
-    }
-
-    public String getName() {
-        return mName;
-    }
-
-    public String getDescription() {
-        return mDescription;
-    }
-
-    public String getSchedule() {
-        return mSchedule;
-    }
-
-    public String getAddress() {
-        return mAddress;
-    }
-
-    public int getImage() {
-        return mImage;
-    }
-
-    public String getEntryFee() {
-        return mEntryFee;
-    }
-
-    public boolean hasImage(){
-        return mImage != NO_IMAGE;
-    }
-
-    @Override
     public String toString() {
         return "Location{" +
                 "mName: " + mName
@@ -130,4 +88,75 @@ public class Location implements Parcelable {
                 + "mImage: " + mImage
                 + "mEntryFee: " + mEntryFee + "}";
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+        dest.writeTypedList(locations);
+        dest.writeInt(mName);
+        dest.writeInt(mWebsite);
+        dest.writeInt(mAddress);
+        dest.writeInt(mImage);
+        dest.writeInt(mSchedule);
+        dest.writeInt(mDescription);
+        dest.writeInt(mEntryFee);
+    }
+
+
+    public int getName() {
+        return mName;
+    }
+
+    public int getWebsite() {
+        return mWebsite;
+    }
+
+    public int getAddress() {
+        return mAddress;
+    }
+
+    public int getImage() {
+        return mImage;
+    }
+
+    public int getSchedule() {
+        return mSchedule;
+    }
+
+    public int getDescription() {
+        return mDescription;
+    }
+
+    public int getEntryFee() {
+        return mEntryFee;
+    }
+
+    /**
+     * set booleans for information that is not available
+     * @return
+     */
+
+
+
+    public boolean hasImage() {
+        return mImage != NO_IMAGE;
+    }
+
+    public boolean hasSchedule(){
+        return mSchedule != NO_SCHEDULE;
+    }
+
+    public boolean hasDescription(){
+        return mDescription != NO_DESCRIPTION;
+    }
+
+    public boolean hasFee(){
+        return mEntryFee != NO_FEE;
+    }
+
 }

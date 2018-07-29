@@ -37,10 +37,16 @@ public class DetailCard extends AppCompatActivity {
         Location location = tIntent.getParcelableExtra("location");
 
         int image = location.getImage();
-        String name = location.getName();
-        String hours = location.getSchedule();
-        String description = location.getDescription();
-        String entryfee = location.getEntryFee();
+        int name = location.getName();
+        int hours = location.getSchedule();
+        int description = location.getDescription();
+        int entryfee = location.getEntryFee();
+
+
+        //  mWebsite = itemView.findViewById(R.id.website);
+        //mAddress = itemView.findViewById(R.id.address);
+        //mSchedule = itemView.findViewById(R.id.hours);
+        //mEntryFee = itemView.findViewById(R.id.fees);
 
         //create widgets
         detailImage = findViewById(R.id.detail_image);

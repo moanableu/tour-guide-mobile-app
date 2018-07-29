@@ -141,7 +141,7 @@
     <string name="kunst_6_7_hours">11am-7pm</string>
     <string name="kunst_6_address">Auguststraße 69 \n10117 Berlin</string>
 
-    <!--7, 8, 9 have same cost-->
+    <!--8, 9 have same cost-->
     <string name="kunst_7">König Galerie</string>
     <string name="kunst_7_url">koeniggalerie.com/</string>
     <string name="kunst_7_8_9_cost">free</string>
@@ -191,6 +191,7 @@
     <string name="berlinale_2">Akademie der Künste</string>
     <string name="berlinale_2_url">adk.de/</string>
     <string name="berlinale_2_address">Pariser Platz 4 \n10117 Berlin</string>
+
 
     <string name="berlinale_3">Deutsche Kinemathek</string>
     <string name="berlinale_3_url">deutsche-kinemathek.de/</string>
