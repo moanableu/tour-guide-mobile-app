@@ -111,8 +111,6 @@
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="162dp"
-            android:ellipsize="end"
-            android:maxLines="4"
             android:text="@string/berlinale_intro"
             android:textSize="@dimen/d15sp" />
         </RelativeLayout>
