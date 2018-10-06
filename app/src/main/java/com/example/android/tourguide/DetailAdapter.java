@@ -33,15 +33,13 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailView
         public DetailViewHolder(final View itemView, final OnItemClickListener listener) {
             super(itemView);
 
-           /* views pending implementations
-            private String mWebsite;
-            private String mSchedule;
-            private String mAddress;
-            private String mEntryFee;*/
-
             mImage = itemView.findViewById(R.id.detail_image);
             mName = itemView.findViewById(R.id.detail_name);
             mDescription = itemView.findViewById(R.id.detail_description);
+            mWebsite = itemView.findViewById(R.id.website);
+            mSchedule = itemView.findViewById(R.id.hours);
+            mAddress = itemView.findViewById(R.id.address);
+            mEntryFee = itemView.findViewById(R.id.fees);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -82,7 +80,10 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailView
 
         holder.mImage.setImageResource(currentItem.getImage());
         holder.mName.setText(currentItem.getName());
+        holder.mAddress.setText(currentItem.getAddress());
+        holder.mSchedule.setText(currentItem.getSchedule());
         holder.mDescription.setText(currentItem.getDescription());
+        holder.mEntryFee.setText(currentItem.getEntryFee());
     }
 
     @Override

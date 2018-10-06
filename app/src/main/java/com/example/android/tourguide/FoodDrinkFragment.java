@@ -30,12 +30,11 @@ public class FoodDrinkFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.rb_recyclerview, container, false);
 
-        //int image, int name, int website, int address, int schedule
-        //int image, int name, int website, int address
-        //int image, int name, int description, int website, int address, int schedule, int fee
-
         final ArrayList <Location> locations = new ArrayList <Location>();
-        locations.add(new Location(R.drawable.sanssouci, R.string.attraction_1,  R.string.attraction_1_desc, R.string.attraction_1_url, R.string.attraction_1_address, R.string.attraction_1_hours, R.string.attraction_1_cost));
+        locations.add(new Location(R.drawable.le_faubourg, R.string.fd_restos_1, R.string.fd_restos_1_desc, R.string.fd_restos_1_url, R.string.fd_restos_1_address, R.string.fd_restos_1_hours, R.string.fd_restos_1_cost));
+        locations.add(new Location(R.drawable.neumond_restaurant, R.string.fd_restos_2, R.string.fd_restos_2_desc, R.string.fd_restos_2_url, R.string.fd_restos_2_address, R.string.fd_restos_2_hours, R.string.fd_restos_2_cost));
+        locations.add(new Location(R.drawable.vox, R.string.fd_restos_3, R.string.fd_restos_3_desc, R.string.fd_restos_3_url, R.string.fd_restos_3_address, R.string.fd_restos_3_hours, R.string.fd_restos_3_cost));
+        locations.add(new Location(R.drawable.patio, R.string.fd_restos_4, R.string.fd_restos_4_desc, R.string.fd_restos_4_url, R.string.fd_restos_4_address, R.string.fd_restos_4_hours, R.string.fd_restos_4_cost));
 
         mRecyclerView = rootView.findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(getActivity());

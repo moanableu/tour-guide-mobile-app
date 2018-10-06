@@ -35,84 +35,88 @@
             android:scaleType="centerCrop"
             tools:src="@drawable/seightseeing" />
 
-        <RelativeLayout android:layout_height="wrap_content"
-            android:layout_below="@id/detail_image"
-            android:layout_width="wrap_content">
-        <TextView
-            android:id="@+id/detail_name"
-            style="@style/txt_cardview"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="@dimen/d27dp"
-            android:gravity="top"
-            android:text="@string/fd_bar_1"
-            android:textColor="@color/font"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_below="@id/detail_image">
 
-        <TextView
-            android:id="@+id/website"
-            style="@style/txt_cardview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/detail_name"
-            android:text="www.something"
-            android:textSize="12sp" />
+            <TextView
+                android:id="@+id/detail_name"
+                style="@style/txt_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/d27dp"
+                android:gravity="top"
+                android:textColor="@color/font"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="Name" />
 
-        <TextView
-            android:id="@+id/address"
-            style="@style/txt_cardview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/website"
-            android:maxLines="2"
-            android:text="@string/fd_bar_1_address"
-            android:textSize="@dimen/d12sp" />
+            <TextView
+                android:id="@+id/website"
+                style="@style/txt_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_name"
+                android:autoLink="web"
+                android:linksClickable="true"
+                android:textSize="12sp"
+                tools:text="www.something" />
+
+            <TextView
+                android:id="@+id/address"
+                style="@style/txt_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/website"
+                android:maxLines="2"
+                android:textSize="@dimen/d12sp"
+                tools:text="Somewhere in Berlin" />
 
             <TextView
                 android:id="@+id/fees"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/address"
                 android:layout_alignStart="@+id/detail_name"
+                android:layout_below="@+id/address"
                 android:paddingBottom="@dimen/d2dp"
-                android:textColor="@color/font"
                 android:paddingTop="@dimen/d1dp"
-                android:text="@string/mk_1_fee"
-                android:textSize="12sp" />
+                android:textColor="@color/font"
+                android:textSize="12sp"
+                tools:text="@string/mk_1_fee" />
 
-        <TextView
-            android:id="@+id/hours_bold"
-            style="@style/txt_cardview"
-            android:layout_width="wrap_content"
-            android:layout_below="@id/fees"
-            android:layout_height="wrap_content"
-            android:text="@string/hours"
-            android:textSize="@dimen/d12sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/hours_bold"
+                style="@style/txt_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fees"
+                android:text="@string/hours"
+                android:textSize="@dimen/d12sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/hours"
-            android:layout_width="327dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:textColor="@color/font"
-            android:layout_toLeftOf="@id/hours_bold"
-            android:layout_below="@id/fees"
-            android:paddingBottom="@dimen/d2dp"
-            android:paddingTop="@dimen/d2dp"
-            android:text="@string/fd_bar_1_2_hours"
-            android:textSize="12sp"  />
+            <TextView
+                android:id="@+id/hours"
+                android:layout_width="327dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/fees"
+                android:layout_toLeftOf="@id/hours_bold"
+                android:paddingBottom="@dimen/d2dp"
+                android:paddingTop="@dimen/d2dp"
+                android:textColor="@color/font"
+                android:textSize="12sp"
+                tools:text="hours" />
 
-        <TextView
-            android:id="@+id/detail_description"
-            style="@style/txt_cardview"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="162dp"
-            android:text="@string/berlinale_intro"
-            android:textSize="@dimen/d15sp" />
+            <TextView
+                android:id="@+id/detail_description"
+                style="@style/txt_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="162dp"
+                android:layout_alignParentBottom="true"
+                android:text="@string/berlinale_intro"
+                android:textSize="@dimen/d15sp" />
         </RelativeLayout>
 
     </RelativeLayout>
