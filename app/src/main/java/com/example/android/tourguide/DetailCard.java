@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class DetailCard extends AppCompatActivity {
     private ImageView detailImage;
-    private TextView detailTitle, detailDescription, dHours, fees;
+    private TextView detailTitle, detailDescription, dHours, fees, dAddress, dWebsite;
     private ArrayList <Location> mLocation;
 
     private RecyclerView.LayoutManager mLayoutManager;
@@ -38,15 +38,11 @@ public class DetailCard extends AppCompatActivity {
 
         int image = location.getImage();
         int name = location.getName();
+        int website = location.getWebsite();
+        int address = location.getAddress();
         int hours = location.getSchedule();
         int description = location.getDescription();
         int entryfee = location.getEntryFee();
-
-
-        //  mWebsite = itemView.findViewById(R.id.website);
-        //mAddress = itemView.findViewById(R.id.address);
-        //mSchedule = itemView.findViewById(R.id.hours);
-        //mEntryFee = itemView.findViewById(R.id.fees);
 
         //create widgets
         detailImage = findViewById(R.id.detail_image);
@@ -54,6 +50,12 @@ public class DetailCard extends AppCompatActivity {
 
         detailTitle = findViewById(R.id.detail_name);
         detailTitle.setText(name);
+
+        dWebsite = findViewById(R.id.website);
+        dWebsite.setText(website);
+
+        dAddress = findViewById(R.id.address);
+        dAddress.setText(address);
 
         dHours = findViewById(R.id.hours);
         dHours.setText(hours);

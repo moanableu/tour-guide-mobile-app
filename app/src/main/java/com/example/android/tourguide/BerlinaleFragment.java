@@ -30,10 +30,11 @@ public class BerlinaleFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.rb_recyclerview, container, false);
 
-        //int image, int name, int description, int website, int address, int schedule, int fee
-
         final ArrayList <Location> locations = new ArrayList <Location>();
-        locations.add(new Location(R.drawable.bikini_berlin_mademoiselle_maurice, R.string.berlinale_1,  R.string.kunst_1_desc, R.string.berlinale_1_url,  R.string.berlinale_1_address, R.string.kunst_1_hours, R.string.kunst_1_cost));
+        locations.add(new Location(R.drawable.kino_arsenal, R.string.berlinale_1, R.string.berlinale_1_desc, R.string.berlinale_1_url, R.string.berlinale_1_address, R.string.berlinale_1_hours, R.string.berlinale_1_cost));
+        locations.add(new Location(R.drawable.reisen_berlin, R.string.berlinale_2, R.string.berlinale_2_desc, R.string.berlinale_2_url, R.string.berlinale_2_address, R.string.berlinale_2_hours, R.string.berlinale_2_cost));
+        locations.add(new Location(R.drawable.reisen_berlin, R.string.berlinale_3, R.string.berlinale_3_desc, R.string.berlinale_3_url, R.string.berlinale_3_address, R.string.berlinale_3_hours, R.string.berlinale_3_cost));
+        locations.add(new Location(R.drawable.hausderkulturenderwelt, R.string.berlinale_4, R.string.berlinale_4_desc, R.string.berlinale_4_url, R.string.berlinale_4_address, R.string.berlinale_4_hours, R.string.berlinale_4_cost));
 
         mLocation = locations;
 

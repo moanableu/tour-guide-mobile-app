@@ -31,11 +31,11 @@ public class SeightseeingFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.rb_recyclerview, container, false);
 
-        //int image, int name, int description, int website,int address,  int schedule, int fee
-        // name url, desc all others
-
         final ArrayList <Location> locations = new ArrayList <Location>();
         locations.add(new Location(R.drawable.sanssouci, R.string.attraction_1,  R.string.attraction_1_desc, R.string.attraction_1_url, R.string.attraction_1_address, R.string.attraction_1_hours, R.string.attraction_1_cost));
+        locations.add(new Location(R.drawable.weinstrassenord, R.string.attraction_2, R.string.attraction_2_desc, R.string.attraction_2_url, R.string.attraction_2_address, R.string.attraction_2_hours, R.string.attraction_2_cost));
+        locations.add(new Location(R.drawable.trittonfountain, R.string.attraction_3, R.string.attraction_3_desc, R.string.attraction_3_url, R.string.attraction_3_address, R.string.attraction_3_hours, R.string.attraction_3_cost));
+        locations.add(new Location(R.drawable.reisen_berlin, R.string.attraction_4, R.string.attraction_4_desc, R.string.attraction_4_url, R.string.attraction_4_address, R.string.attraction_4_hours, R.string.attraction_4_cost));
 
         mLocation = locations;
 
